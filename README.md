@@ -25,3 +25,6 @@ Parameter values used and shared across all species
 # maxshade = 100 (full shade)
 T_pref, CT_max, and CT_min are set to be species specific
 ```
+
+Source of Aedes aegypti and Aedes albopictus occurrences:
+Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c

@@ -28,3 +28,7 @@ T_pref, CT_max, and CT_min are set to be species specific
 
 Source of Aedes aegypti and Aedes albopictus occurrences:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
+
+Climate data source:
+https://www.climdex.org/access/
+used the warmest extreme daily maximum temperature (TXx) recorded in the HadEX2 dataset (https://www.climdex.org/) for 1986–2005

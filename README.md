@@ -11,7 +11,7 @@ Questions:
 
 Parameter values used and shared across all species
 ```
-# Ww_g = 0.3 # for now, using average of 0.3 g as mosquito weight for all species
+# Ww_g = 0.003 # for now, using average of 0.3 g as mosquito weight for all species
 # shape = 2 keeping at 2 (ellipsis) for all species
 # alpha_min : 0.85 (default, solar absorptivity)
 # alpha_max : 0.85 (default, solar absorptivity)
@@ -31,5 +31,7 @@ Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
 
 Climate data source:
 https://www.climdex.org/access/
-used the warmest extreme daily maximum temperature (TXx) recorded in the HadEx2 dataset (https://www.climdex.org/) for 2000 - 2022.  0.25 x 0.25 degree resolution (~28km).    
-info about data source here: https://climatedataguide.ucar.edu/climate-data/ghcndex-gridded-temperature-and-precipitation-climate-extremes-indices-climdex-data
+using era5 data (available at a temporal resolution of 1 hr, a spatial resolution of 0.25° and span from 1950 to 5 days from present).  
+info about using micro_era5: https://rdrr.io/github/mrke/NicheMapR/man/micro_era5.html
+
+

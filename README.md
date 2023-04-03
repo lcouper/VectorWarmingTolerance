@@ -5,7 +5,6 @@ Project outline doc:
 https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/edit 
 
 Next to do :
-- Finalize table of species CTmax
 - Set up function to automate microclimate -> Ectotherm model for a given species/population and trait
 - Figure out why operative body temps can’t go as low as full shade temperatures 
 - Plot occurrence points for Ae. Sierrensis

@@ -6,7 +6,11 @@ https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/
 
 Models run so far:
 - Aedes aegypti, -5 to 5 latitude.   
-Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv u
+Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv
+
+TO DO: 
+-find Anopheles occurrence records
+-adjust models for Anopheles so that nocturnal activity allowed!
 
 ## Sources 
 

@@ -4,12 +4,9 @@ Repository for code and data sources used to analyze vector warming tolerance
 Project outline doc:
 https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/edit 
 
-Next to do :
-- Set up function to automate microclimate -> Ectotherm model for a given species/population and trait
-- Figure out why operative body temps can’t go as low as full shade temperatures 
-- Plot occurrence points for Ae. Sierrensis
-- Plot occurrence points for Ae aegypti 
-
+Models run so far:
+- Aedes aegypti, -5 to 5 latitude.   
+Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv u
 
 ## Sources 
 

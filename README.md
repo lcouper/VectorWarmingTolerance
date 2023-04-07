@@ -17,6 +17,9 @@ TO DO:
 ### Vector occurrence data
 Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
+Anopheles:   
+Kyalo et al. 2017:  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NQ6CUN
+
 
 ### Vector thermal limits
 Anopheles gambiae and Anopheles stephensi: 

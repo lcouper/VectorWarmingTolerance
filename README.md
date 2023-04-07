@@ -17,7 +17,9 @@ TO DO:
 ### Vector occurrence data
 Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
-Anopheles:   
+Anopheles global: 
+Sinka et al. 2012: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3349467/
+Anopheles (Africa only): 
 Kyalo et al. 2017:  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NQ6CUN
 
 

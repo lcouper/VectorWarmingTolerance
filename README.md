@@ -4,6 +4,9 @@ Repository for code and data sources used to analyze vector warming tolerance
 Project outline doc:
 https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/edit 
 
+Manuscript doc:
+https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit
+
 Models run so far:
 - Aedes aegypti, -5 to 5 latitude.   
 Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv

@@ -7,6 +7,9 @@ https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/
 Manuscript doc:
 https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit
 
+Supplemental Files:
+'Supp Table 1': DataFiles > VectorWarmingTolerance_SpeciesThermalLimits.csv
+'Supp Table 2': DataFiles > VectorOccurrence > VectorWarmingTolerance_OccurrenceDataSources.csv
 Models run so far:
 - Aedes aegypti, -5 to 5 latitude.   
 Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv

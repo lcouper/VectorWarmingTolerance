@@ -50,9 +50,9 @@ Parameter values used and shared across all species
 # shape = 2 keeping at 2 (ellipsis) for all species
 # alpha_min : 0.85 (default, solar absorptivity)
 # alpha_max : 0.85 (default, solar absorptivity)
-# diurn = 1 using for all species
-# nocturn = 0 using for all species
-# crepus = 1 using for all species
+# diurn = 1 # set to be species specific 
+# nocturn = 0 # set to be species specific
+# crepus = 1 # set to be species specific
 # shade_seek = 1 # allowing shade-seeking for all species
 # burrow = 0 (not allowing burrowing for any species)
 # climb = 0 (not allowing climbing for any species)

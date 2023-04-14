@@ -10,9 +10,7 @@ https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/
 Supplemental Files:
 'Supp Table 1': DataFiles > VectorWarmingTolerance_SpeciesThermalLimits.csv
 'Supp Table 2': DataFiles > VectorOccurrence > VectorWarmingTolerance_OccurrenceDataSources.csv
-Models run so far:
-- Aedes aegypti, -5 to 5 latitude.   
-Saved as WarmingTolerance > DataFiles > AeAegyptiTSM_neg5to5.csv
+
 
 TO DO: 
 -find Anopheles occurrence records
@@ -53,7 +51,7 @@ Parameter values used and shared across all species
 # diurn = 1 # set to be species specific 
 # nocturn = 0 # set to be species specific
 # crepus = 1 # set to be species specific
-# shade_seek = 1 # allowing shade-seeking for all species
+# shade_seek = 1 # Running mdoels under shade-seeking and no-shade seeking for each species
 # burrow = 0 (not allowing burrowing for any species)
 # climb = 0 (not allowing climbing for any species)
 # minshade = 0 (minimum available shade. 0 = full sun)

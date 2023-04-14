@@ -1,4 +1,4 @@
-# VectorWarmingTolerance
+# Vector Warming Tolerance
 Repository for code and data sources used to analyze vector warming tolerance
 
 Project outline doc:
@@ -44,6 +44,10 @@ info about using micro_era5: https://rdrr.io/github/mrke/NicheMapR/man/micro_era
 
 Parameter values used and shared across all species
 ```
+# For microclimate model:
+# Usrhyt = 1 # to estimate microcliamte conditions at 1m (roughly average height of activity)
+
+# For ectotherm model:
 # Ww_g = 0.003 # for now, using average of 0.3 g as mosquito weight for all species
 # shape = 2 keeping at 2 (ellipsis) for all species
 # alpha_min : 0.85 (default, solar absorptivity)

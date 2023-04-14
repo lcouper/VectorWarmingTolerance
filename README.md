@@ -46,6 +46,8 @@ Parameter values used and shared across all species
 ```
 # For microclimate model:
 # Usrhyt = 1 # to estimate microcliamte conditions at 1m (roughly average height of activity)
+# minshade = 0 # 0% canopy cover (full sun)
+# maxshade = 100 # 100% canopy cover (full shade)
 
 # For ectotherm model:
 # Ww_g = 0.003 # for now, using average of 0.3 g as mosquito weight for all species

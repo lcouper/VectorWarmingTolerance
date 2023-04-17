@@ -21,6 +21,9 @@ TO DO:
 ### Vector occurrence data
 Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
+Anopheles: 
+GBIF: https://www.gbif.org/species/1650518   
+(not used)
 Anopheles global: 
 Sinka et al. 2012: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3349467/
 Anopheles (Africa only): 
@@ -54,15 +57,12 @@ Parameter values used and shared across all species
 # shape = 2 keeping at 2 (ellipsis) for all species
 # alpha_min : 0.85 (default, solar absorptivity)
 # alpha_max : 0.85 (default, solar absorptivity)
-# diurn = 1 # set to be species specific 
-# nocturn = 0 # set to be species specific
-# crepus = 1 # set to be species specific
 # shade_seek = 1 # Running mdoels under shade-seeking and no-shade seeking for each species
 # burrow = 0 (not allowing burrowing for any species)
 # climb = 0 (not allowing climbing for any species)
 # minshade = 0 (minimum available shade. 0 = full sun)
 # maxshade = 100 (full shade)
-T_pref, CT_max, and CT_min are set to be species specific
+T_pref, CT_max, and CT_min, diurnal, nocturnal, crepuscular are set to be species specific
 ```
 
 

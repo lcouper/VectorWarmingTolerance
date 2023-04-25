@@ -9,8 +9,6 @@ https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/
 
 Supplemental Files:
 'Supp Table 1': DataFiles > VectorWarmingTolerance_SpeciesThermalLimits.csv
-'Supp Table 2': DataFiles > VectorOccurrence > VectorWarmingTolerance_OccurrenceDataSources.csv
-
 
 TO DO: 
 -find Anopheles occurrence records

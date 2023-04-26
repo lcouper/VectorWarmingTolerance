@@ -10,22 +10,12 @@ https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/
 Supplemental Files:
 'Supp Table 1': DataFiles > VectorWarmingTolerance_SpeciesThermalLimits.csv
 
-TO DO: 
--find Anopheles occurrence records
--adjust models for Anopheles so that nocturnal activity allowed!
-
 ## Sources 
 
 ### Vector occurrence data
 Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
-Anopheles: 
-GBIF: https://www.gbif.org/species/1650518   
-(not used)
-Anopheles global: 
-Sinka et al. 2012: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3349467/
-Anopheles (Africa only): 
-Kyalo et al. 2017:  https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/NQ6CUN
+all other species: GBIF
 
 
 ### Vector thermal limits
@@ -38,9 +28,13 @@ Culiseta melanura:
 Mordecai et al. 2019: https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.13335&file=ele13335-sup-0001-SupInfo.pdf
 
 ### Climate data 
-https://www.climdex.org/access/
+# accessed: https://cds.climate.copernicus.eu
 using era5 data (available at a temporal resolution of 1 hr, a spatial resolution of 0.25° and span from 1950 to 5 days from present).  
 info about using micro_era5: https://rdrr.io/github/mrke/NicheMapR/man/micro_era5.html
+Downloaded data in 10 degree latitudinal bands at a time
+Request: era5 hourly data on single levels. Then select the 10 variables needed for microclimate model.
+Given the large file size, requests can take ~4 hours to fulfill (and ~30 minutes to download)
+Files need to be named "era5_2017.nc" on local computer to be run properly
 
 
 Parameter values used and shared across all species

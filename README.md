@@ -17,6 +17,9 @@ Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
 all other species: GBIF
 
+Culex species: Cleaned and filtered occurrence records (from GBIF) and other sources: 
+https://academic.oup.com/jme/advance-article/doi/10.1093/jme/tjad027/7123791
+
 
 ### Vector thermal limits
 Anopheles gambiae and Anopheles stephensi: 

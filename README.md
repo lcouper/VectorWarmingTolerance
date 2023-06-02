@@ -5,10 +5,8 @@ Project outline doc:
 https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/edit 
 
 Manuscript doc:
-https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit
+https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (note: not currently updated)
 
-Supplemental Files:
-'Supp Table 1': DataFiles > VectorWarmingTolerance_SpeciesThermalLimits.csv
 
 ## Sources 
 
@@ -17,9 +15,18 @@ Aedes aegypti and Aedes albopictus:
 Kraemer et al. 2017: https://datadryad.org/stash/dataset/doi:10.5061/dryad.47v3c
 all other species: GBIF
 
-Culex species: Cleaned and filtered occurrence records (from GBIF) and other sources: 
+Culex species (not used): Cleaned and filtered occurrence records (from GBIF) and other sources: 
 https://academic.oup.com/jme/advance-article/doi/10.1093/jme/tjad027/7123791
 
+For additional Aedes Vexans occurrence data
+compiled here: https://onlinelibrary.wiley.com/doi/full/10.1111/tbed.14404?saml_referrer
+Algeria: https://orbi.uliege.be/bitstream/2268/196649/1/AEB%20288-294.pdf
+Iran: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6885136/
+Saudi Arabia: https://academic.oup.com/jme/article/48/4/717/898766?login=false
+Senegeal: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0215194
+
+Anopheles stephensi
+Kenya: https://www.researchsquare.com/article/rs-2498485/v2
 
 ### Vector thermal limits
 Anopheles gambiae and Anopheles stephensi: 
@@ -48,7 +55,7 @@ Parameter values used and shared across all species
 # maxshade = 100 # 100% canopy cover (full shade)
 
 # For ectotherm model:
-# Ww_g = 0.003 # for now, using average of 0.3 g as mosquito weight for all species
+# Ww_g = 0.003 # for now, using average of 3 mg as mosquito weight for all species
 # shape = 2 keeping at 2 (ellipsis) for all species
 # alpha_min : 0.85 (default, solar absorptivity)
 # alpha_max : 0.85 (default, solar absorptivity)

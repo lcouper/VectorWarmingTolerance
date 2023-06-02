@@ -38,7 +38,7 @@ Culiseta melanura:
 Mordecai et al. 2019: https://onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fele.13335&file=ele13335-sup-0001-SupInfo.pdf
 
 ### Climate data 
-# accessed: https://cds.climate.copernicus.eu
+accessed here: https://cds.climate.copernicus.eu
 using era5 data (available at a temporal resolution of 1 hr, a spatial resolution of 0.25° and span from 1950 to 5 days from present).  
 info about using micro_era5: https://rdrr.io/github/mrke/NicheMapR/man/micro_era5.html
 Downloaded data in 10 degree latitudinal bands at a time

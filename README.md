@@ -1,11 +1,8 @@
 # Vector Warming Tolerance
 Repository for code and data sources used to analyze vector warming tolerance
 
-Project outline doc:
-https://docs.google.com/document/d/1tI3qwjM38633R3KNWEdQIeQdMpTHPs_BhFMrloRZyVI/edit 
-
 Manuscript doc:
-https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (note: not currently updated)
+https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (this is the most up-to-date version)
 
 
 ## Data Sources 

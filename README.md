@@ -55,7 +55,6 @@ Submit request for 'ERA hourly data on single levels from 1940 to present'. Then
 - mean surface net longwave radiation flux
 - Total sky direct solar radiation at surface
 - Surface solar radiation downwards, clear sky
-- Total sky direct solar radiation at surface
 
 Then select all days and months within 2017. Input the desired lat/long bounds and request data.
 Given the large file size, requests can take ~4 hours to fulfill (and ~30 minutes to download)

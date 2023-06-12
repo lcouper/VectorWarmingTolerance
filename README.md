@@ -51,10 +51,10 @@ Submit request for 'ERA hourly data on single levels from 1940 to present'. Then
 - 2m temperature
 - 2m dewpoint temperature
 - surface pressure
-- mean surface downward longwave radiation flux
-- mean surface net longwave radiation flux
-- Total sky direct solar radiation at surface
-- Surface solar radiation downwards, clear sky
+- mean surface downward longwave radiation flux (*Not the 'clear sky' version of this variable*) 
+- mean surface net longwave radiation flux (*Not the 'clear sky' version of this variable*) 
+- Total sky direct solar radiation at surface (*Not the 'clear sky' version of this variable*) 
+- Surface solar radiation downwards (*Not the 'clear sky' version of this variable*) 
 
 Then select all days and months within 2017. Input the desired lat/long bounds and request data.
 Given the large file size, requests can take ~4 hours to fulfill (and ~30 minutes to download)

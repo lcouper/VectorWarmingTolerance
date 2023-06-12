@@ -47,7 +47,7 @@ Submit request for 'ERA hourly data on single levels from 1940 to present'. Then
 - 10m v-component of wind
 - land-sea mask
 - total precipitation
-- cloud cover
+- total cloud cover
 - 2m temperature
 - 2m dewpoint temperature
 - surface pressure

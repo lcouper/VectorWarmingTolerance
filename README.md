@@ -4,7 +4,7 @@ Repository for code and data sources used to analyze vector warming tolerance
 Manuscript doc:
 https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (this is the most up-to-date version)
 
-## Upcomoing steps:
+## Upcoming steps:
 - finish incorporating seasonality
 - investigate time scales of thermal danger (and generate histograms by region)
 - Decide on appropriate # of knots for GAMs

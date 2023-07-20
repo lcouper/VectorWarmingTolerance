@@ -5,6 +5,7 @@ Manuscript doc:
 https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (this is the most up-to-date version)
 
 ## Upcoming steps:
+- decide what to do with high elevation records (e.g., for Ae vexans, An gambiae, for which there are >15 high elevation records)
 - Replot TSMs with seasonality in vector life cycles incorporated
 - Investigate time scales of thermal danger (and generate histograms by region)
 - Plot trends for high and low elevation records separately

@@ -5,11 +5,9 @@ Manuscript doc:
 https://docs.google.com/document/d/1xCS3hHwLBeA_4W-JbToOJdZhmBASHR2Y1lQmUz2uQUo/edit (this is the most up-to-date version)
 
 ## Upcoming steps:
-- Decide on biogeographical designation — perhaps WWF 14 biomes (see file official > terr_biomes.lyr ) or the 21 global burden of disease regions  
-- random intercept for high elevation records? 
-- Group TSMs for main figure plot (
-- Investigate time scales of thermal danger (and generate histograms by region)
 - Create dot/line plot for peaks and valleys in TSMs
+- Decide on biogeographical designation — perhaps WWF 14 biomes (see file official > terr_biomes.lyr ) or the 21 global burden of disease regions  
+- Investigate time scales of thermal danger (and generate histograms by region)
 
 
 ## Data Sources 

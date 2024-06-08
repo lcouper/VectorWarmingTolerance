@@ -1,4 +1,11 @@
 # Assignment of vector occurrence records to biomes
 
 We used QGIS to assign vector occurrence records to the WWF 14 biomes (as described in Olson et al. 2001) based on their latitude and longitude.
-Specifically we calculated the intersection of the point data layer, uploaded here as "AllSpecies_LatLongs" to the polygon data layer, uploadeded here as "WWF_Biomes" using the vector geoprocessing tool 'Intersection'
+First, we added the "AllSpecies_LatLongs" as a vector (point) layer, and "WWF_Biomes.shp" as a vector (polygon layer). Next, we usied the vector geoprocessing tool 'Intersection' to calculate the intersection of the point occurrence records to the polygon biome designations. This assigned a biome to each occurrence record, creating a new layer, exported as a .csv, and uploaded here for reference as "VectorTSM_Biome_Classifications.csv"
+
+
+<p align="center">
+  <img width="800"
+    src="https://github.com/lcouper/VectorWarmingTolerance/assets/10873177/80700d8d-8aec-4c10-8538-94769202b7a9">
+  </p>    
+<p align="center"> 

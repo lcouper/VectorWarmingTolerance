@@ -1,0 +1,308 @@
+VECTOR,OCCURRENCE_ID,SOURCE_TYPE,LOCATION_TYPE,POLYGON_ADMIN,YEAR,COUNTRY,COUNTRY_ID,GAUL_AD0,LongitudeF,Longitude,Latitude,elevation,elev_units
+Aedes albopictus,40880,published,point,-999,1998,Argentina,ARG,12,-54,-54.58,-26.41,221,meters
+Aedes albopictus,40714,published,point,-999,1998,Argentina,ARG,12,-53,-53.74,-26.06,526,meters
+Aedes albopictus,40834,published,point,-999,,Brazil,BRA,37,-53,-53.93,-27.46,411,meters
+Aedes albopictus,40688,published,point,-999,1996,Brazil,BRA,37,-49,-49.23,-25.45,904,meters
+Aedes albopictus,40835,published,point,-999,,Brazil,BRA,37,-49,-49.1,-26.92,60,meters
+Aedes albopictus,40773,published,point,-999,2001,Brazil,BRA,37,-48,-48.53,-26.21,10,meters
+Aedes albopictus,40741,published,point,-999,,Brazil,BRA,37,-48,-48.86,-26.32,24,meters
+Aedes albopictus,41560,published,point,-999,2008,Brazil,BRA,37,-48,-48.51,-27.53,54,meters
+Aedes albopictus,40833,published,point,-999,,Brazil,BRA,37,-48,-48.54,-27.6,30,meters
+Aedes albopictus,40590,published,point,-999,1989,South Africa,ZAF,1013965,18,18.44,-33.93,197,meters
+Aedes albopictus,39979,published,point,-999,1984,Madagascar,MDG,150,46,46.38,-25.04,29,meters
+Aedes albopictus,40661,published,point,-999,1992,New Zealand,NZL,179,174,174.9,-36.96,34,meters
+Aedes albopictus,40081,published,point,-999,1992,Fiji,FJI,83,-179,-179.97,-16.82,797,meters
+Aedes albopictus,41087,published,point,-999,2004,Tonga,TON,245,-175,-175.2,-21.13,5,meters
+Aedes albopictus,41082,published,point,-999,1993,French Polynesia,PYF,87,-149,-149.56,-17.53,70,meters
+Aedes albopictus,40945,published,point,-999,2006,Brazil,BRA,37,-56,-56.29,-15.54,215,meters
+Aedes albopictus,40925,published,point,-999,2003,Brazil,BRA,37,-55,-55.06,-22.2,395,meters
+Aedes albopictus,40702,published,point,-999,1997,Brazil,BRA,37,-54,-54.57,-22.08,314,meters
+Aedes albopictus,39881,published,point,-999,1988,Brazil,BRA,37,-52,-52.15,-21.78,266,meters
+Aedes albopictus,40983,published,point,-999,2006,Brazil,BRA,37,-51,-51.94,-23.42,543,meters
+Aedes albopictus,40905,published,point,-999,2002,Brazil,BRA,37,-50,-50.37,-19.99,479,meters
+Aedes albopictus,39970,published,point,-999,,Brazil,BRA,37,-49,-49.52,-20.82,561,meters
+Aedes albopictus,41081,published,point,-999,1993,Brazil,BRA,37,-48,-48.96,-21.13,519,meters
+Aedes albopictus,40746,published,point,-999,1999,Brazil,BRA,37,-47,-47.84,-24.5,17,meters
+Aedes albopictus,40652,published,point,-999,1993,Brazil,BRA,37,-46,-46.17,-19.68,1127,meters
+Aedes albopictus,40947,published,point,-999,,Brazil,BRA,37,-45,-45.65,-22.94,648,meters
+Aedes albopictus,40516,published,point,-999,1986,Brazil,BRA,37,-44,-44.69,-22.58,549,meters
+Aedes albopictus,39937,published,point,-999,2003,Brazil,BRA,37,-43,-43.57,-22.9,24,meters
+Aedes albopictus,39999,published,point,-999,,Brazil,BRA,37,-40,-40.58,-19.94,758,meters
+Aedes albopictus,40993,published,point,-999,,Madagascar,MDG,150,43,43.66,-23.36,-8,meters
+Aedes albopictus,39983,published,point,-999,,Madagascar,MDG,150,44,44.74,-24.7,232,meters
+Aedes albopictus,39980,published,point,-999,1986,Madagascar,MDG,150,45,45.59,-20.35,148,meters
+Aedes albopictus,39982,published,point,-999,1987,Madagascar,MDG,150,46,46.83,-16.95,55,meters
+Aedes albopictus,41154,published,point,-999,2010,Madagascar,MDG,150,47,47.12,-18.32,1213,meters
+Aedes albopictus,41268,published,point,-999,2007,Madagascar,MDG,150,48,48.35,-21.22,4,meters
+Aedes albopictus,41337,published,point,-999,2007,Madagascar,MDG,150,49,49.42,-18.15,7,meters
+Aedes albopictus,40998,published,point,-999,2006,R?union,REU,206,55,55.63,-21.12,1047,meters
+Aedes albopictus,41334,published,point,-999,2007,Mauritius,MUS,160,57,57.76,-20.35,33,meters
+Aedes albopictus,41335,published,point,-999,2007,Mauritius,MUS,160,63,63.38,-19.72,123,meters
+Aedes albopictus,40079,published,point,-999,1991,Fiji,FJI,83,177,177.46,-17.61,27,meters
+Aedes albopictus,40078,published,point,-999,1991,Fiji,FJI,83,178,178.43,-18.15,-75,meters
+Aedes albopictus,40082,published,point,-999,1992,Fiji,FJI,83,179,179.18,-16.58,223,meters
+Aedes albopictus,41006,published,point,-999,2006,Brazil,BRA,37,-46,-46.42,-10.58,508,meters
+Aedes albopictus,40840,published,point,-999,,Brazil,BRA,37,-38,-38.5,-12.97,29,meters
+Aedes albopictus,40808,published,point,-999,2002,Brazil,BRA,37,-35,-35.74,-9.66,10,meters
+Aedes albopictus,40950,published,point,-999,2005,Brazil,BRA,37,-34,-34.94,-8.06,9,meters
+Aedes albopictus,40949,published,point,-999,2005,Brazil,BRA,37,-34,-34.88,-8.08,5,meters
+Aedes albopictus,41322,published,point,-999,2006,Mayotte,MYT,161,45,45.12,-12.84,106,meters
+Aedes albopictus,41323,published,point,-999,2006,Mayotte,MYT,161,45,45.23,-12.78,17,meters
+Aedes albopictus,41343,published,point,-999,2007,Glorioso Island,XXX,96,47,47.29,-11.57,-224,meters
+Aedes albopictus,39975,published,point,-999,,Madagascar,MDG,150,48,48.27,-13.32,149,meters
+Aedes albopictus,39974,published,point,-999,,Madagascar,MDG,150,48,48.2,-13.36,45,meters
+Aedes albopictus,39987,published,point,-999,,Madagascar,MDG,150,49,49.28,-12.28,26,meters
+Aedes albopictus,41342,published,point,-999,2007,Madagascar,MDG,150,49,49.3,-12.27,-2,meters
+Aedes albopictus,40088,published,point,-999,,Indonesia,IDN,1013696,106,106.79,-6.59,247,meters
+Aedes albopictus,39990,published,point,-999,,Indonesia,IDN,1013696,106,106.81,-6.16,6,meters
+Aedes albopictus,40089,published,point,-999,,Indonesia,IDN,1013696,107,107.14,-6.25,16,meters
+Aedes albopictus,41104,published,point,-999,1978,Indonesia,IDN,1013696,110,110.35,-7.68,271,meters
+Aedes albopictus,40338,published,point,-999,1992,Indonesia,IDN,1013696,119,119.94,-5.51,308,meters
+Aedes albopictus,40339,published,point,-999,1992,Indonesia,IDN,1013696,119,119.41,-5.15,7,meters
+Aedes albopictus,40715,published,point,-999,1997,Indonesia,IDN,1013696,121,121.66,-8.86,-86,meters
+Aedes albopictus,41019,published,point,-999,,Indonesia,IDN,1013696,123,123.58,-10.17,81,meters
+Aedes albopictus,39889,published,point,-999,,Timor-Leste,TLS,242,125,125.05,-8.97,516,meters
+Aedes albopictus,39888,published,point,-999,,Timor-Leste,TLS,242,125,125.22,-9,271,meters
+Aedes albopictus,39892,published,point,-999,,Papua New Guinea,PNG,1011441,141,141.3,-6.12,32,meters
+Aedes albopictus,40319,published,point,-999,2005,Australia,AUS,17,142,142.18,-9.95,6,meters
+Aedes albopictus,40976,published,point,-999,,Papua New Guinea,PNG,1011441,142,142.73,-9.27,10,meters
+Aedes albopictus,40322,published,point,-999,2005,Australia,AUS,17,143,143.77,-9.6,4,meters
+Aedes albopictus,40656,published,point,-999,1992,Papua New Guinea,PNG,1011441,143,143.21,-9.09,4,meters
+Aedes albopictus,40320,published,point,-999,2005,Australia,AUS,17,144,144.06,-9.92,3,meters
+Aedes albopictus,39891,published,point,-999,,Papua New Guinea,PNG,1011441,146,146.99,-6.72,22,meters
+Aedes albopictus,39887,published,point,-999,,Papua New Guinea,PNG,1011441,147,147.19,-9.48,77,meters
+Aedes albopictus,40196,published,point,-999,2004,Colombia,COL,57,-77,-77.04,3.88,3,meters
+Aedes albopictus,39935,published,point,-999,2006,Colombia,COL,57,-76,-76.52,3.45,1001,meters
+Aedes albopictus,41474,published,point,-999,2003,Colombia,COL,57,-69,-69.94,-4.22,73,meters
+Aedes albopictus,40987,published,point,-999,2005,Brazil,BRA,37,-60,-60.14,-3.23,51,meters
+Aedes albopictus,40990,published,point,-999,2005,Brazil,BRA,37,-59,-59.99,-3.11,47,meters
+Aedes albopictus,40809,published,point,-999,2002,Brazil,BRA,37,-52,-52.7,-3.42,179,meters
+Aedes albopictus,40712,published,point,-999,1997,Brazil,BRA,37,-44,-44.23,-2.48,8,meters
+Aedes albopictus,40926,published,point,-999,2005,Brazil,BRA,37,-38,-38.55,-3.76,26,meters
+Aedes albopictus,41513,published,point,-999,2007,Gabon,GAB,89,9,9.48,0.4,30,meters
+Aedes albopictus,41378,published,point,-999,2007,Cameroon,CMR,45,10,10.55,3.83,229,meters
+Aedes albopictus,41266,published,point,-999,2009,Cameroon,CMR,45,11,11.5,3.9,775,meters
+Aedes albopictus,41528,published,point,-999,2007,Cameroon,CMR,45,12,12.53,3.91,672,meters
+Aedes albopictus,41310,published,point,-999,2010,Gabon,GAB,89,13,13.1,-0.5,378,meters
+Aedes albopictus,40364,published,point,-999,2002,Cameroon,CMR,45,14,14.36,4.43,627,meters
+Aedes albopictus,41130,published,point,-999,2011,Congo,COG,59,15,15.22,-4.27,325,meters
+Aedes albopictus,41452,published,point,-999,2009,Central African Republic,CAF,49,16,16.05,3.52,398,meters
+Aedes albopictus,41240,published,point,-999,2010,Central African Republic,CAF,49,18,18.55,4.37,359,meters
+Aedes albopictus,41221,published,point,-999,2008,Seychelles,SYC,220,55,55.69,-4.32,13,meters
+Aedes albopictus,39997,published,point,-999,,Malaysia,MYS,153,101,101.7,3.18,52,meters
+Aedes albopictus,41674,published,point,-999,2010,Singapore,SGP,222,103,103.84,1.36,23,meters
+Aedes albopictus,41467,published,point,-999,2001,Malaysia,MYS,153,104,104.07,1.75,46,meters
+Aedes albopictus,40921,published,point,-999,1999,Malaysia,MYS,153,109,109.67,1.62,211,meters
+Aedes albopictus,40529,published,point,-999,1987,Malaysia,MYS,153,110,110.35,1.55,11,meters
+Aedes albopictus,40346,published,point,-999,1993,Malaysia,MYS,153,111,111.83,2.29,7,meters
+Aedes albopictus,40102,published,point,-999,1970,Malaysia,MYS,153,113,113.98,4.4,11,meters
+Aedes albopictus,41142,published,point,-999,2012,Brunei Darussalam,BRN,40,114,114.19,4.58,-1,meters
+Aedes albopictus,40101,published,point,-999,1970,Malaysia,MYS,153,117,117.88,4.25,2,meters
+Aedes albopictus,40103,published,point,-999,1970,Malaysia,MYS,153,118,118.6,4.47,1,meters
+Aedes albopictus,40022,published,point,-999,1995,Indonesia,IDN,1013696,119,119.62,-4.42,7,meters
+Aedes albopictus,40201,published,point,-999,1993,Indonesia,IDN,1013696,127,127.87,1.32,173,meters
+Aedes albopictus,40978,published,point,-999,,Indonesia,IDN,1013696,136,136.56,-4.76,15,meters
+Aedes albopictus,40797,published,point,-999,2002,Mexico,MEX,1006344,-92,-92.25,14.92,207,meters
+Aedes albopictus,41023,published,point,-999,,Nicaragua,NIC,180,-87,-87.53,13.02,33,meters
+Aedes albopictus,40913,published,point,-999,2003,Nicaragua,NIC,180,-86,-86.89,12.43,97,meters
+Aedes albopictus,41025,published,point,-999,2002,Panama,PAN,191,-79,-79.39,9.08,21,meters
+Aedes albopictus,41561,published,point,-999,2010,Venezuela,VEN,263,-66,-66.83,10.43,1159,meters
+Aedes albopictus,40798,published,point,-999,2002,Trinidad and Tobago,TTO,246,-61,-61.62,10.68,26,meters
+Aedes albopictus,41150,published,point,-999,2010,C?te d'Ivoire,CIV,66,-4,-4.01,5.27,4,meters
+Aedes albopictus,40410,published,point,-999,,Nigeria,NGA,182,5,5.63,6.34,77,meters
+Aedes albopictus,40587,published,point,-999,1991,Nigeria,NGA,182,6,6.22,6.22,196,meters
+Aedes albopictus,39882,published,point,-999,2002,Nigeria,NGA,182,7,7.03,5.78,173,meters
+Aedes albopictus,40367,published,point,-999,2002,Cameroon,CMR,45,9,9.9,5.3,991,meters
+Aedes albopictus,41533,published,point,-999,2007,Cameroon,CMR,45,10,10.52,5.14,1329,meters
+Aedes albopictus,40372,published,point,-999,2002,Cameroon,CMR,45,11,11.49,6.09,744,meters
+Aedes albopictus,40373,published,point,-999,2002,Cameroon,CMR,45,12,12.62,6.47,864,meters
+Aedes albopictus,40370,published,point,-999,2002,Cameroon,CMR,45,14,14.55,5.89,1018,meters
+Aedes albopictus,41544,published,point,-999,2006,India,IND,115,73,73.64,10.07,-226,meters
+Aedes albopictus,40251,published,point,-999,1993,India,IND,115,74,74.85,12.87,35,meters
+Aedes albopictus,41455,published,point,-999,2009,India,IND,115,75,75.8,11.17,7,meters
+Aedes albopictus,41321,published,point,-999,2008,India,IND,115,76,76.21,10.06,4,meters
+Aedes albopictus,40612,published,point,-999,1988,India,IND,115,77,77.58,12.97,910,meters
+Aedes albopictus,40260,published,point,-999,,India,IND,115,78,78.14,9.92,133,meters
+Aedes albopictus,40300,published,point,-999,1969,India,IND,115,79,79.33,12.9,165,meters
+Aedes albopictus,41592,published,point,-999,2008,Sri Lanka,LKA,231,80,80.38,7.47,148,meters
+Aedes albopictus,41313,published,point,-999,2010,Sri Lanka,LKA,231,81,81.61,7.77,8,meters
+Aedes albopictus,41500,published,point,-999,2007,India,IND,115,92,92.75,11.62,38,meters
+Aedes albopictus,40756,published,point,-999,2000,Thailand,THA,240,98,98.85,14.44,115,meters
+Aedes albopictus,41428,published,point,-999,,Thailand,THA,240,99,99.84,10.09,72,meters
+Aedes albopictus,41458,published,point,-999,2009,Malaysia,MYS,153,100,100.26,5.29,42,meters
+Aedes albopictus,41691,published,point,-999,2008,Thailand,THA,240,101,101.21,14.2,6,meters
+Aedes albopictus,40533,published,point,-999,1987,Malaysia,MYS,153,102,102.86,5.06,297,meters
+Aedes albopictus,40536,published,point,-999,1987,Malaysia,MYS,153,103,103.15,5.32,2,meters
+Aedes albopictus,40486,published,point,-999,1971,Viet Nam,VNM,1011447,106,106.83,10.87,9,meters
+Aedes albopictus,41697,published,point,-999,2006,Viet Nam,VNM,1011447,109,109.19,12.24,-2,meters
+Aedes albopictus,40109,published,point,-999,1970,Malaysia,MYS,153,115,115.94,5.12,204,meters
+Aedes albopictus,40120,published,point,-999,1970,Malaysia,MYS,153,116,116.08,5.97,12,meters
+Aedes albopictus,40123,published,point,-999,1970,Malaysia,MYS,153,117,117.48,6.65,12,meters
+Aedes albopictus,40118,published,point,-999,1970,Malaysia,MYS,153,118,118.11,5.84,21,meters
+Aedes albopictus,40106,published,point,-999,1970,Malaysia,MYS,153,119,119.05,5.07,13,meters
+Aedes albopictus,40345,published,point,-999,1987,Philippines,PHL,196,120,120.99,14.64,14,meters
+Aedes albopictus,41018,published,point,-999,,Philippines,PHL,196,121,121.48,13.04,0,meters
+Aedes albopictus,40253,published,point,-999,,Philippines,PHL,196,123,123.89,10.3,14,meters
+Aedes albopictus,39901,published,point,-999,1977,Philippines,PHL,196,124,124,12.82,17,meters
+Aedes albopictus,41318,published,point,-999,2010,Marshall Islands,MHL,157,167,167.74,8.72,-81,meters
+Aedes albopictus,40648,published,point,-999,,United States of America,USA,259,-158,-158,21.44,180,meters
+Aedes albopictus,40540,published,point,-999,1984,United States of America,USA,259,-157,-157.78,21.35,300,meters
+Aedes albopictus,41053,published,point,-999,2002,United States of America,USA,259,-155,-155.99,20.75,73,meters
+Aedes albopictus,40241,published,point,-999,2001,Mexico,MEX,1006344,-99,-99.56,24.86,352,meters
+Aedes albopictus,39972,published,point,-999,1998,Mexico,MEX,1006344,-97,-97.04,20.06,73,meters
+Aedes albopictus,41559,published,point,-999,2009,Belize,BLZ,28,-89,-89.14,17.07,131,meters
+Aedes albopictus,40223,published,point,-999,1995,Guatemala,GTM,103,-88,-88.59,15.73,10,meters
+Aedes albopictus,41308,published,point,-999,2011,Mexico,MEX,1006344,-86,-86.89,21.15,9,meters
+Aedes albopictus,39874,published,point,-999,1996,Cuba,CUB,63,-82,-82.4,23.01,62,meters
+Aedes albopictus,40018,published,point,-999,2002,United States of America,USA,259,-81,-81.36,24.69,1,meters
+Aedes albopictus,41302,published,point,-999,2010,Haiti,HTI,108,-74,-74.12,18.65,81,meters
+Aedes albopictus,41297,published,point,-999,2010,Haiti,HTI,108,-73,-73.86,18.33,234,meters
+Aedes albopictus,41305,published,point,-999,2010,Haiti,HTI,108,-72,-72.1,18.83,143,meters
+Aedes albopictus,40281,published,point,-999,1994,Dominican Republic,DOM,72,-69,-69.93,18.52,27,meters
+Aedes albopictus,39932,published,point,-999,,Puerto Rico,PRI,200,-66,-66.31,18.18,644,meters
+Aedes albopictus,41627,published,point,-999,2002,India,IND,115,72,72.93,18.54,26,meters
+Aedes albopictus,41626,published,point,-999,2002,India,IND,115,73,73.42,18.08,36,meters
+Aedes albopictus,40353,published,point,-999,1974,India,IND,115,75,75.69,18.24,519,meters
+Aedes albopictus,40126,published,point,-999,1992,India,IND,115,82,82.36,23.19,625,meters
+Aedes albopictus,40351,published,point,-999,1999,India,IND,115,84,84.81,22.23,191,meters
+Aedes albopictus,40374,published,point,-999,1964,India,IND,115,88,88.31,22.59,6,meters
+Aedes albopictus,40409,published,point,-999,2001,Bangladesh,BGD,23,90,90.41,23.71,12,meters
+Aedes albopictus,40918,published,point,-999,2004,Thailand,THA,240,98,98.55,16.75,207,meters
+Aedes albopictus,41436,published,point,-999,,Thailand,THA,240,99,99.01,18.58,292,meters
+Aedes albopictus,41434,published,point,-999,,Thailand,THA,240,100,100.14,18.14,155,meters
+Aedes albopictus,40296,published,point,-999,2005,Thailand,THA,240,101,101.9,15.08,201,meters
+Aedes albopictus,40622,published,point,-999,,China,CHN,53,102,102.48,23.69,1506,meters
+Aedes albopictus,41161,published,point,-999,2009,Lao People's Democratic Republic,LAO,139,104,104.95,17.1,147,meters
+Aedes albopictus,41180,published,point,-999,2010,Lao People's Democratic Republic,LAO,139,105,105.17,17.6,158,meters
+Aedes albopictus,41660,published,point,-999,2007,Viet Nam,VNM,1011447,106,106.36,20.33,2,meters
+Aedes albopictus,40619,published,point,-999,,China,CHN,53,108,108.31,22.83,87,meters
+Aedes albopictus,40618,published,point,-999,,China,CHN,53,109,109.11,21.48,2,meters
+Aedes albopictus,40617,published,point,-999,,China,CHN,53,110,110.34,20.04,8,meters
+Aedes albopictus,41107,published,point,-999,2011,China,CHN,53,113,113.37,23.04,5,meters
+Aedes albopictus,41062,published,point,-999,2006,Hong Kong,HKG,33364,114,114.21,22.34,135,meters
+Aedes albopictus,40623,published,point,-999,,China,CHN,53,116,116.86,23.85,44,meters
+Aedes albopictus,41027,published,point,-999,1987,China,CHN,53,120,120.3,22.61,9,meters
+Aedes albopictus,40716,published,point,-999,1997,China,CHN,53,121,121.5,25,31,meters
+Aedes albopictus,40396,published,point,-999,1974,Northern Mariana Islands,MNP,185,145,145.72,15.14,49,meters
+Aedes albopictus,40818,published,point,-999,2001,United States of America,USA,259,-118,-118.2,33.77,3,meters
+Aedes albopictus,40822,published,point,-999,2001,United States of America,USA,259,-117,-117.7,34.01,199,meters
+Aedes albopictus,40927,published,point,-999,2005,United States of America,USA,259,-104,-104.23,32.42,952,meters
+Aedes albopictus,40324,published,point,-999,1993,Mexico,MEX,1006344,-101,-101.52,27.88,491,meters
+Aedes albopictus,40439,published,point,-999,1992,United States of America,USA,259,-100,-100.41,29.31,347,meters
+Aedes albopictus,40428,published,point,-999,1992,United States of America,USA,259,-99,-99.1,28.88,183,meters
+Aedes albopictus,40417,published,point,-999,1992,United States of America,USA,259,-98,-98.68,27.31,172,meters
+Aedes albopictus,40421,published,point,-999,1992,United States of America,USA,259,-97,-97.27,28.3,17,meters
+Aedes albopictus,40450,published,point,-999,1992,United States of America,USA,259,-96,-96.91,29.68,103,meters
+Aedes albopictus,40597,published,point,-999,1989,United States of America,USA,259,-95,-95.33,29.5,19,meters
+Aedes albopictus,40575,published,point,-999,1987,United States of America,USA,259,-94,-94.97,29.73,10,meters
+Aedes albopictus,39878,published,point,-999,1987,United States of America,USA,259,-93,-93.22,30.23,7,meters
+Aedes albopictus,40135,published,point,-999,1990,United States of America,USA,259,-92,-92.53,31.32,26,meters
+Aedes albopictus,40578,published,point,-999,1987,United States of America,USA,259,-91,-91.15,30.46,24,meters
+Aedes albopictus,40047,published,point,-999,1986,United States of America,USA,259,-90,-90.65,29.97,8,meters
+Aedes albopictus,40594,published,point,-999,1989,United States of America,USA,259,-89,-89.91,30.03,4,meters
+Aedes albopictus,40013,published,point,-999,1990,United States of America,USA,259,-88,-88.05,30.69,9,meters
+Aedes albopictus,40844,published,point,-999,,United States of America,USA,259,-87,-87.28,30.52,44,meters
+Aedes albopictus,40147,published,point,-999,1991,United States of America,USA,259,-86,-86.56,30.46,19,meters
+Aedes albopictus,40133,published,point,-999,1990,United States of America,USA,259,-85,-85.47,29.99,10,meters
+Aedes albopictus,40846,published,point,-999,,United States of America,USA,259,-84,-84.2,33.94,310,meters
+Aedes albopictus,40165,published,point,-999,1992,United States of America,USA,259,-83,-83.18,30.97,64,meters
+Aedes albopictus,40315,published,point,-999,1993,United States of America,USA,259,-82,-82.83,34.69,233,meters
+Aedes albopictus,40034,published,point,-999,1994,United States of America,USA,259,-81,-81.94,28.04,48,meters
+Aedes albopictus,40863,published,point,-999,2001,United States of America,USA,259,-80,-80.66,26.82,5,meters
+Aedes albopictus,40060,published,point,-999,1987,United States of America,USA,259,-79,-79.78,34.94,75,meters
+Aedes albopictus,40807,published,point,-999,1998,United States of America,USA,259,-77,-77.95,34.22,1,meters
+Aedes albopictus,41252,published,point,-999,2007,Israel,ISR,121,34,34.91,32.02,50,meters
+Aedes albopictus,41202,published,point,-999,2010,Lebanon,LBN,141,35,35.54,33.79,620,meters
+Aedes albopictus,41210,published,point,-999,2010,Lebanon,LBN,141,36,36.39,34.4,675,meters
+Aedes albopictus,40393,published,point,-999,1993,Pakistan,PAK,188,71,71.54,33.69,786,meters
+Aedes albopictus,41013,published,point,-999,2007,India,IND,115,73,73.02,26.28,246,meters
+Aedes albopictus,41015,published,point,-999,2007,India,IND,115,75,75.81,26.91,438,meters
+Aedes albopictus,41370,published,point,-999,2009,India,IND,115,77,77.21,28.67,220,meters
+Aedes albopictus,39943,published,point,-999,1994,India,IND,115,78,78.17,29.97,362,meters
+Aedes albopictus,41557,published,point,-999,2009,India,IND,115,79,79.52,29.08,266,meters
+Aedes albopictus,40713,published,point,-999,1991,Nepal,NPL,175,86,86.03,27.05,333,meters
+Aedes albopictus,41231,published,point,-999,,Bhutan,BTN,31,89,89.39,26.86,432,meters
+Aedes albopictus,39950,published,point,-999,1997,India,IND,115,90,90.65,25.51,349,meters
+Aedes albopictus,39955,published,point,-999,1997,India,IND,115,91,91.75,26.18,72,meters
+Aedes albopictus,41117,published,point,-999,2011,India,IND,115,92,92.59,26.49,65,meters
+Aedes albopictus,41123,published,point,-999,2011,India,IND,115,93,93.73,26.94,84,meters
+Aedes albopictus,39962,published,point,-999,1997,India,IND,115,94,94.11,27.24,94,meters
+Aedes albopictus,39966,published,point,-999,1997,India,IND,115,95,95.62,27.39,159,meters
+Aedes albopictus,42043,published,point,-999,2006-2008,China,CHN,53,102,102.9118365,29.78097984,1543,meters
+Aedes albopictus,40708,published,point,-999,1990,China,CHN,53,103,103.48,29.6,435,meters
+Aedes albopictus,40627,published,point,-999,,China,CHN,53,104,104.07,30.67,500,meters
+Aedes albopictus,42046,published,point,-999,2006-2008,China,CHN,53,105,105.9652129,32.15582816,886,meters
+Aedes albopictus,42051,published,point,-999,2006-2008,China,CHN,53,106,106.2960934,33.90892119,1078,meters
+Aedes albopictus,40800,published,point,-999,,China,CHN,53,107,107.89,25.41,506,meters
+Aedes albopictus,40887,published,point,-999,2002,China,CHN,53,108,108.92,27.24,451,meters
+Aedes albopictus,42048,published,point,-999,2006-2008,China,CHN,53,109,109.355353,34.90318057,471,meters
+Aedes albopictus,40709,published,point,-999,1994,China,CHN,53,110,110.28,25.28,161,meters
+Aedes albopictus,40499,published,point,-999,1973,China,CHN,53,112,112.58,33.03,138,meters
+Aedes albopictus,40630,published,point,-999,,China,CHN,53,113,113.65,34.77,104,meters
+Aedes albopictus,40942,published,point,-999,2006,China,CHN,53,114,114.28,30.57,32,meters
+Aedes albopictus,40625,published,point,-999,,China,CHN,53,119,119.3,26.07,25,meters
+Aedes albopictus,40732,published,point,-999,,China,CHN,53,120,120.12,30.28,23,meters
+Aedes albopictus,40716,published,point,-999,1997,China,CHN,53,121,121.5,25,31,meters
+Aedes albopictus,41138,published,point,-999,2011,"Korea, Republic of",KOR,1011443,126,126.56,33.25,82,meters
+Aedes albopictus,40508,published,point,-999,1979,Japan,JPN,126,127,127.7,26.2,34,meters
+Aedes albopictus,40737,published,point,-999,1999,Japan,JPN,126,128,128.17,26.74,44,meters
+Aedes albopictus,40639,published,point,-999,1990,Japan,JPN,126,129,129.9,33.54,13,meters
+Aedes albopictus,40069,published,point,-999,1988,Japan,JPN,126,130,130.56,31.59,2,meters
+Aedes albopictus,40558,published,point,-999,,Japan,JPN,126,134,134.98,34.8,75,meters
+Aedes albopictus,41541,published,point,-999,2004,Japan,JPN,126,136,136.52,34.74,2,meters
+Aedes albopictus,40828,published,point,-999,2001,United States of America,USA,259,-122,-122.42,37.66,62,meters
+Aedes albopictus,40827,published,point,-999,2001,United States of America,USA,259,-121,-121.6,37.09,87,meters
+Aedes albopictus,40891,published,point,-999,2004,United States of America,USA,259,-104,-104.81,40.09,1503,meters
+Aedes albopictus,40139,published,point,-999,1990,United States of America,USA,259,-97,-97.39,35.42,386,meters
+Aedes albopictus,40730,published,point,-999,1992,United States of America,USA,259,-96,-96.72,41.83,406,meters
+Aedes albopictus,40581,published,point,-999,1987,United States of America,USA,259,-94,-94.58,39.1,261,meters
+Aedes albopictus,40564,published,point,-999,1989,United States of America,USA,259,-90,-90.75,37.98,305,meters
+Aedes albopictus,40723,published,point,-999,1998,United States of America,USA,259,-89,-89.63,40.69,169,meters
+Aedes albopictus,40695,published,point,-999,1995,United States of America,USA,259,-88,-88.15,38.87,149,meters
+Aedes albopictus,40006,published,point,-999,,United States of America,USA,259,-87,-87.57,37.98,117,meters
+Aedes albopictus,40965,published,point,-999,2005,United States of America,USA,259,-86,-86.53,39.17,245,meters
+Aedes albopictus,40063,published,point,-999,1987,United States of America,USA,259,-85,-85.01,39.23,291,meters
+Aedes albopictus,40729,published,point,-999,1999,United States of America,USA,259,-84,-84.13,36.1,275,meters
+Aedes albopictus,40308,published,point,-999,2001,United States of America,USA,259,-83,-83.3,35.51,758,meters
+Aedes albopictus,40792,published,point,-999,1999,United States of America,USA,259,-82,-82.61,37.01,736,meters
+Aedes albopictus,40236,published,point,-999,1996,United States of America,USA,259,-81,-81.21,35.01,217,meters
+Aedes albopictus,40314,published,point,-999,2003,United States of America,USA,259,-78,-78.65,35.79,95,meters
+Aedes albopictus,40795,published,point,-999,1999,United States of America,USA,259,-77,-77.5,37.24,62,meters
+Aedes albopictus,40722,published,point,-999,1998,United States of America,USA,259,-76,-76.97,38.26,-1,meters
+Aedes albopictus,40752,published,point,-999,2000,United States of America,USA,259,-75,-75.21,40.02,62,meters
+Aedes albopictus,40686,published,point,-999,1995,United States of America,USA,259,-74,-74.2,40.43,6,meters
+Aedes albopictus,41971,published,point,-999,2004,Spain,ESP,229,-2,-2.08,41.47,989,meters
+Aedes albopictus,41968,published,point,-999,2004,Spain,ESP,229,2,2.07,41.48,148,meters
+Aedes albopictus,41857,published,point,-999,1991,Italy,ITA,122,8,8.97,44.4,49,meters
+Aedes albopictus,42018,published,point,-999,1994,Italy,ITA,122,9,9.11,39.22,17,meters
+Aedes albopictus,41894,published,point,-999,1996,Italy,ITA,122,10,10.61,43.71,9,meters
+Aedes albopictus,41933,published,point,-999,2000,Italy,ITA,122,11,11.84,42.03,9,meters
+Aedes albopictus,41936,published,point,-999,2007,Italy,ITA,122,12,12.89,41.94,754,meters
+Aedes albopictus,41965,published,point,-999,2000,Italy,ITA,122,13,13.33,41.57,157,meters
+Aedes albopictus,41992,published,point,-999,1994,Italy,ITA,122,14,14.28,40.85,11,meters
+Aedes albopictus,41977,published,point,-999,1979,Albania,ALB,3,19,19.83,41.33,141,meters
+Aedes albopictus,41998,published,point,-999,1979,Albania,ALB,3,20,20.79,40.62,898,meters
+Aedes albopictus,41140,published,point,-999,2011,Turkey,TUR,249,26,26.65,40.89,51,meters
+Aedes albopictus,42054,published,point,-999,2006-2008,China,CHN,53,110,110.3623593,35.38756334,463,meters
+Aedes albopictus,42055,published,point,-999,2006-2008,China,CHN,53,111,111.0634396,35.7381035,930,meters
+Aedes albopictus,42060,published,point,-999,2006-2008,China,CHN,53,113,113.6218904,37.59671384,1010,meters
+Aedes albopictus,42063,published,point,-999,2006-2008,China,CHN,53,114,114.4428044,37.78707072,96,meters
+Aedes albopictus,42064,published,point,-999,2006-2008,China,CHN,53,116,116.1560164,39.70253683,44,meters
+Aedes albopictus,42065,published,point,-999,2006-2008,China,CHN,53,120,120.3438677,41.66559216,290,meters
+Aedes albopictus,42066,published,point,-999,2006-2008,China,CHN,53,123,123.684631,42.29614932,54,meters
+Aedes albopictus,39875,published,point,-999,2003,"Korea, Republic of",KOR,1011443,127,127.15,35.82,54,meters
+Aedes albopictus,40774,published,point,-999,,Japan,JPN,126,136,136.62,35.37,7,meters
+Aedes albopictus,41543,published,point,-999,2004,Japan,JPN,126,137,137.14,36.76,-26,meters
+Aedes albopictus,40546,published,point,-999,1986,Japan,JPN,126,139,139.4,35.45,47,meters
+Aedes albopictus,40762,published,point,-999,2000,Japan,JPN,126,140,140.96,38.57,19,meters
+Aedes albopictus,40767,published,point,-999,2000,Japan,JPN,126,141,141.89,39.27,83,meters
+Aedes albopictus,41721,published,point,-999,2000,France,FRA,85,0,-0.68,48.8,165,meters
+Aedes albopictus,41746,published,point,-999,2009,France,FRA,85,5,5.19,45.91,248,meters
+Aedes albopictus,41778,published,point,-999,2009,France,FRA,85,6,6.25,45.56,461,meters
+Aedes albopictus,41815,published,point,-999,1994,Italy,ITA,122,7,7.68,45.08,242,meters
+Aedes albopictus,41763,published,point,-999,1996,Italy,ITA,122,8,8.43,45.75,375,meters
+Aedes albopictus,41780,published,point,-999,1994,Italy,ITA,122,10,10.22,45.54,144,meters
+Aedes albopictus,41770,published,point,-999,1996,Italy,ITA,122,11,11.43,45.69,130,meters
+Aedes albopictus,41758,published,point,-999,1993,Italy,ITA,122,12,12.83,45.78,2,meters
+Aedes albopictus,41768,published,point,-999,,Italy,ITA,122,13,13.15,45.69,-2,meters
+Aedes albopictus,41754,published,point,-999,2004,Croatia,HRV,62,15,15.9,45.79,112,meters

@@ -1,0 +1,232 @@
+VECTOR,OCCURRENCE_ID,SOURCE_TYPE,LOCATION_TYPE,POLYGON_ADMIN,YEAR,COUNTRY,COUNTRY_ID,GAUL_AD0,LongitudeF,Longitude,Latitude,elevation,elev_units
+Aedes aegypti,4720,published,point,-999,2010,Argentina,ARG,12,-68,-68.05,-38.95,281,meters
+Aedes aegypti,5048,published,point,-999,2012,Argentina,ARG,12,-57,-57.81,-36.09,12,meters
+Aedes aegypti,9560,published,point,-999,,Argentina,ARG,12,-66,-66.85,-29.42,504,meters
+Aedes aegypti,4133,published,point,-999,2008,Argentina,ARG,12,-65,-65.27,-26.93,388,meters
+Aedes aegypti,1506,published,point,-999,1996,Argentina,ARG,12,-64,-64.13,-31.47,413,meters
+Aedes aegypti,1503,published,point,-999,1996,Argentina,ARG,12,-63,-63.26,-32.41,208,meters
+Aedes aegypti,4130,published,point,-999,2008,Argentina,ARG,12,-61,-61.48,-31.25,99,meters
+Aedes aegypti,9582,published,point,-999,,Argentina,ARG,12,-60,-60.05,-26.92,84,meters
+Aedes aegypti,1502,published,point,-999,1996,Argentina,ARG,12,-59,-59.04,-34.09,19,meters
+Aedes aegypti,4721,published,point,-999,2010,Argentina,ARG,12,-58,-58.07,-34.87,12,meters
+Aedes aegypti,3717,published,point,-999,2007,Paraguay,PRY,194,-57,-57.6,-25.37,119,meters
+Aedes aegypti,3707,published,point,-999,2007,Uruguay,URY,260,-56,-56.17,-34.9,35,meters
+Aedes aegypti,9580,published,point,-999,,Paraguay,PRY,194,-55,-55.85,-27.35,96,meters
+Aedes aegypti,3448,published,point,-999,2006,Argentina,ARG,12,-54,-54.58,-25.61,177,meters
+Aedes aegypti,2994,published,point,-999,2004,Brazil,BRA,37,-53,-53.91,-28.39,337,meters
+Aedes aegypti,2467,published,point,-999,2002,Brazil,BRA,37,-51,-51.2,-30.03,25,meters
+Aedes aegypti,1076,published,point,-999,1991,South Africa,ZAF,1013965,27,27.55,-25.98,1453,meters
+Aedes aegypti,1071,published,point,-999,1991,South Africa,ZAF,1013965,30,30.43,-30.77,45,meters
+Aedes aegypti,9563,published,point,-999,,South Africa,ZAF,1013965,31,31.89,-28.75,102,meters
+Aedes aegypti,1075,published,point,-999,1991,South Africa,ZAF,1013965,32,32.25,-26.92,76,meters
+Aedes aegypti,9603,published,point,-999,,Madagascar,MDG,150,46,46.98,-25.02,68,meters
+Aedes aegypti,1968,published,point,-999,1999,Australia,AUS,17,115,115.75,-31.86,18,meters
+Aedes aegypti,9587,published,point,-999,,Australia,AUS,17,146,146.23,-26.4,301,meters
+Aedes aegypti,1140,published,point,-999,1992,Australia,AUS,17,148,148.79,-26.57,307,meters
+Aedes aegypti,9594,published,point,-999,,Australia,AUS,17,149,149.79,-25.64,189,meters
+Aedes aegypti,9585,published,point,-999,,Australia,AUS,17,150,150.62,-26.73,308,meters
+Aedes aegypti,9595,published,point,-999,,Australia,AUS,17,151,151.6,-25.62,123,meters
+Aedes aegypti,9589,published,point,-999,,Australia,AUS,17,152,152.07,-26.19,282,meters
+Aedes aegypti,539,published,point,-999,1976,Fiji,FJI,83,-179,-179.98,-16.84,797,meters
+Aedes aegypti,4987,published,point,-999,2011,Tonga,TON,245,-175,-175.22,-21.15,7,meters
+Aedes aegypti,537,published,point,-999,1976,Cook Islands,COK,60,-159,-159.77,-21.23,164,meters
+Aedes aegypti,4489,published,point,-999,2009,French Polynesia,PYF,87,-151,-151.48,-16.84,22,meters
+Aedes aegypti,1029,published,point,-999,1990,French Polynesia,PYF,87,-148,-148.23,-15.12,-119,meters
+Aedes aegypti,3267,published,point,-999,2005,Bolivia,BOL,33,-65,-65.46,-17.01,337,meters
+Aedes aegypti,1777,published,point,-999,1998,Argentina,ARG,12,-63,-63.81,-22.53,518,meters
+Aedes aegypti,3473,published,point,-999,2006,Bolivia,BOL,33,-59,-59.6,-18.34,620,meters
+Aedes aegypti,3049,published,point,-999,2004,Brazil,BRA,37,-56,-56.14,-15.65,186,meters
+Aedes aegypti,2314,published,point,-999,2001,Brazil,BRA,37,-54,-54.62,-20.44,580,meters
+Aedes aegypti,3257,published,point,-999,2005,Brazil,BRA,37,-52,-52.46,-23.08,458,meters
+Aedes aegypti,2141,published,point,-999,2000,Brazil,BRA,37,-50,-50.06,-21.4,405,meters
+Aedes aegypti,2497,published,point,-999,2002,Brazil,BRA,37,-48,-48.57,-20.56,551,meters
+Aedes aegypti,1975,published,point,-999,1999,Brazil,BRA,37,-46,-46.72,-23.5,761,meters
+Aedes aegypti,3465,published,point,-999,2006,Brazil,BRA,37,-44,-44.82,-21.21,849,meters
+Aedes aegypti,2783,published,point,-999,2003,Brazil,BRA,37,-42,-42.04,-22.89,6,meters
+Aedes aegypti,2815,published,point,-999,2003,Brazil,BRA,37,-40,-40.37,-20.24,19,meters
+Aedes aegypti,1356,published,point,-999,1994,Brazil,BRA,37,-38,-38.9,-15.85,11,meters
+Aedes aegypti,189,published,point,-999,1969,Zimbabwe,ZWE,271,31,31.67,-21.05,418,meters
+Aedes aegypti,794,published,point,-999,1985,Madagascar,MDG,150,44,44.27,-20.3,2,meters
+Aedes aegypti,810,published,point,-999,1986,Madagascar,MDG,150,47,47.24,-20.53,1408,meters
+Aedes aegypti,9677,published,point,-999,,Madagascar,MDG,150,49,49.39,-18.13,7,meters
+Aedes aegypti,9668,published,point,-999,,Australia,AUS,17,134,134.23,-19.55,340,meters
+Aedes aegypti,1082,published,point,-999,1991,Australia,AUS,17,139,139.91,-22.91,159,meters
+Aedes aegypti,1090,published,point,-999,1991,Australia,AUS,17,141,141.75,-20.66,124,meters
+Aedes aegypti,744,published,point,-999,1983,Australia,AUS,17,144,144.2,-20.85,327,meters
+Aedes aegypti,1013,published,point,-999,1990,Australia,AUS,17,146,146.82,-19.28,6,meters
+Aedes aegypti,1094,published,point,-999,1991,Australia,AUS,17,148,148.25,-20.01,5,meters
+Aedes aegypti,9625,published,point,-999,,Australia,AUS,17,150,150.74,-23.12,33,meters
+Aedes aegypti,80,published,point,-999,1966,Australia,AUS,17,152,152.35,-24.88,22,meters
+Aedes aegypti,326,published,point,-999,1972,New Caledonia,NCL,178,165,165.82,-21.4,52,meters
+Aedes aegypti,800,published,point,-999,1985,Vanuatu,VUT,262,167,167.21,-15.51,27,meters
+Aedes aegypti,702,published,point,-999,1982,Fiji,FJI,83,177,177.46,-17.61,27,meters
+Aedes aegypti,9700,published,point,-999,,Wallis and Futuna,WLF,266,-176,-176.22,-13.29,43,meters
+Aedes aegypti,596,published,point,-999,1978,Samoa,WSM,212,-171,-171.63,-13.88,105,meters
+Aedes aegypti,801,published,point,-999,1985,French Polynesia,PYF,87,-147,-147.71,-14.93,-6,meters
+Aedes aegypti,2523,published,point,-999,2002,Peru,PER,1011442,-80,-80.63,-5.19,34,meters
+Aedes aegypti,1040,published,point,-999,1990,Peru,PER,1011442,-76,-76.38,-6.51,264,meters
+Aedes aegypti,7440,published,point,-999,2013,Peru,PER,1011442,-70,-70.75,-13.34,1329,meters
+Aedes aegypti,2347,published,point,-999,2001,Brazil,BRA,37,-67,-67.8,-9.96,150,meters
+Aedes aegypti,3059,published,point,-999,2004,Brazil,BRA,37,-63,-63.91,-8.75,74,meters
+Aedes aegypti,2508,published,point,-999,2002,Brazil,BRA,37,-60,-60.15,-12.74,581,meters
+Aedes aegypti,840,published,point,-999,1987,Brazil,BRA,37,-42,-42.61,-11.81,744,meters
+Aedes aegypti,2841,published,point,-999,2003,Brazil,BRA,37,-39,-39.41,-7.23,424,meters
+Aedes aegypti,2173,published,point,-999,2000,Brazil,BRA,37,-37,-37.42,-10.69,176,meters
+Aedes aegypti,2511,published,point,-999,2002,Brazil,BRA,37,-35,-35.74,-9.67,10,meters
+Aedes aegypti,294,published,point,-999,1971,Angola,AGO,8,13,13.23,-8.81,50,meters
+Aedes aegypti,262,published,point,-999,1970,United Republic of Tanzania,TZA,257,36,36.3,-8.97,356,meters
+Aedes aegypti,264,published,point,-999,1970,United Republic of Tanzania,TZA,257,39,39.28,-6.82,13,meters
+Aedes aegypti,1305,published,point,-999,1993,Comoros,COM,58,44,44.41,-12.25,513,meters
+Aedes aegypti,3808,published,point,-999,2007,Glorioso Island,XXX,96,47,47.29,-11.57,-224,meters
+Aedes aegypti,9832,published,point,-999,,Indonesia,IDN,1013696,106,106.81,-6.16,6,meters
+Aedes aegypti,2844,published,point,-999,2003,Indonesia,IDN,1013696,108,108.55,-6.76,24,meters
+Aedes aegypti,4767,published,point,-999,2010,Indonesia,IDN,1013696,112,112.72,-7.26,6,meters
+Aedes aegypti,1204,published,point,-999,1992,Indonesia,IDN,1013696,119,119.94,-5.51,308,meters
+Aedes aegypti,1787,published,point,-999,1998,Indonesia,IDN,1013696,123,123.25,-8.33,790,meters
+Aedes aegypti,713,published,point,-999,1982,Australia,AUS,17,142,142.22,-10.58,7,meters
+Aedes aegypti,1036,published,point,-999,1990,Australia,AUS,17,144,144.05,-9.92,3,meters
+Aedes aegypti,375,published,point,-999,1973,Solomon Islands,SLB,1011444,160,160.15,-9.58,354,meters
+Aedes aegypti,465,published,point,-999,1974,Tuvalu,TUV,252,179,179.19,-8.51,-325,meters
+Aedes aegypti,9308,published,point,-999,2013,Peru,PER,1011442,-80,-80.26,-3.48,4,meters
+Aedes aegypti,3119,published,point,-999,2004,Colombia,COL,57,-77,-77.04,3.88,3,meters
+Aedes aegypti,9939,published,point,-999,,Colombia,COL,57,-75,-75.29,2.93,461,meters
+Aedes aegypti,1793,published,point,-999,1998,Peru,PER,1011442,-73,-73.27,-3.75,88,meters
+Aedes aegypti,2524,published,point,-999,2002,Peru,PER,1011442,-70,-70.93,-3.91,80,meters
+Aedes aegypti,3518,published,point,-999,2006,Brazil,BRA,37,-63,-63.12,-4.1,46,meters
+Aedes aegypti,9891,published,point,-999,,Brazil,BRA,37,-59,-59.99,-3.11,47,meters
+Aedes aegypti,1812,published,point,-999,1998,French Guiana,GUF,86,-52,-52.28,4.91,18,meters
+Aedes aegypti,1803,published,point,-999,1998,Brazil,BRA,37,-50,-50.38,-0.16,14,meters
+Aedes aegypti,2849,published,point,-999,2003,Brazil,BRA,37,-47,-47.56,-4.3,252,meters
+Aedes aegypti,2538,published,point,-999,2002,Brazil,BRA,37,-43,-43.11,-3.38,82,meters
+Aedes aegypti,3092,published,point,-999,2004,Brazil,BRA,37,-40,-40.38,-3.69,87,meters
+Aedes aegypti,3857,published,point,-999,2007,Gabon,GAB,89,9,9.48,0.4,30,meters
+Aedes aegypti,2550,published,point,-999,2002,Cameroon,CMR,45,11,11.52,3.87,735,meters
+Aedes aegypti,9909,published,point,-999,,Gabon,GAB,89,13,13.6,-1.63,325,meters
+Aedes aegypti,1042,published,point,-999,1990,Democratic Republic of the Congo,COD,68,15,15.32,-4.31,274,meters
+Aedes aegypti,4235,published,point,-999,2008,Uganda,UGA,253,29,29.9,-0.18,931,meters
+Aedes aegypti,339,published,point,-999,1972,Uganda,UGA,253,31,31.73,-0.34,1243,meters
+Aedes aegypti,2545,published,point,-999,2002,Kenya,KEN,133,34,34.75,-0.1,1137,meters
+Aedes aegypti,9911,published,point,-999,,Kenya,KEN,133,37,37.35,-0.67,1160,meters
+Aedes aegypti,4804,published,point,-999,2010,Kenya,KEN,133,39,39.55,-3.93,175,meters
+Aedes aegypti,9931,published,point,-999,,Somalia,SOM,226,44,44.67,1.65,54,meters
+Aedes aegypti,2866,published,point,-999,2003,Indonesia,IDN,1013696,98,98.66,3.58,26,meters
+Aedes aegypti,9955,published,point,-999,,Malaysia,MYS,153,101,101.71,3.16,45,meters
+Aedes aegypti,194,published,point,-999,1969,Singapore,SGP,222,103,103.85,1.32,18,meters
+Aedes aegypti,752,published,point,-999,1983,Indonesia,IDN,1013696,105,105.71,-4.66,6,meters
+Aedes aegypti,272,published,point,-999,1970,Malaysia,MYS,153,110,110.34,1.55,11,meters
+Aedes aegypti,274,published,point,-999,1970,Malaysia,MYS,153,113,113.98,4.4,11,meters
+Aedes aegypti,276,published,point,-999,1970,Malaysia,MYS,153,118,118,5,295,meters
+Aedes aegypti,754,published,point,-999,1983,Indonesia,IDN,1013696,124,124.91,1.53,73,meters
+Aedes aegypti,1307,published,point,-999,1993,Indonesia,IDN,1013696,127,127.84,1.16,52,meters
+Aedes aegypti,473,published,point,-999,1974,Nauru,NRU,173,166,166.92,-0.52,-6,meters
+Aedes aegypti,566,published,point,-999,1976,Kiribati,KIR,135,173,173.13,1.36,53,meters
+Aedes aegypti,10239,published,point,-999,,Mexico,MEX,1006344,-92,-92.25,14.9,164,meters
+Aedes aegypti,4016,published,point,-999,2007,El Salvador,SLV,75,-89,-89.18,13.74,578,meters
+Aedes aegypti,2029,published,point,-999,1999,Costa Rica,CRI,61,-85,-85.43,10.63,161,meters
+Aedes aegypti,1432,published,point,-999,1995,Panama,PAN,191,-82,-82.43,8.43,34,meters
+Aedes aegypti,361,published,point,-999,1972,Colombia,COL,57,-76,-76,9.05,88,meters
+Aedes aegypti,10022,published,point,-999,,Colombia,COL,57,-73,-73.2,7.47,702,meters
+Aedes aegypti,3560,published,point,-999,2006,Venezuela,VEN,263,-70,-70.56,9.4,326,meters
+Aedes aegypti,2873,published,point,-999,2003,Venezuela,VEN,263,-67,-67.44,8.93,95,meters
+Aedes aegypti,1218,published,point,-999,1992,Venezuela,VEN,263,-64,-64.18,10.45,0,meters
+Aedes aegypti,2606,published,point,-999,2002,Trinidad and Tobago,TTO,246,-60,-60.69,11.26,195,meters
+Aedes aegypti,51,published,point,-999,1963,Guyana,GUY,107,-57,-57.52,6.24,4,meters
+Aedes aegypti,1823,published,point,-999,1998,French Guiana,GUF,86,-53,-53.82,5.6,21,meters
+Aedes aegypti,10235,published,point,-999,,Senegal,SEN,217,-16,-16.44,14.63,21,meters
+Aedes aegypti,357,published,point,-999,1972,Sierra Leone,SLE,221,-13,-13.07,8.7,23,meters
+Aedes aegypti,2388,published,point,-999,2001,Guinea,GIN,106,-10,-10.73,10.03,446,meters
+Aedes aegypti,10068,published,point,-999,,C?te d'Ivoire,CIV,66,-7,-7.38,9.82,399,meters
+Aedes aegypti,73,published,point,-999,1965,C?te d'Ivoire,CIV,66,-4,-4.82,5.88,34,meters
+Aedes aegypti,10005,published,point,-999,,Ghana,GHA,94,-1,-1.47,6.72,273,meters
+Aedes aegypti,50,published,point,-999,1962,Benin,BEN,29,2,2.44,6.36,5,meters
+Aedes aegypti,9992,published,point,-999,,Nigeria,NGA,182,5,5.63,6.34,77,meters
+Aedes aegypti,802,published,point,-999,1985,Nigeria,NGA,182,8,8.89,9.93,1178,meters
+Aedes aegypti,2565,published,point,-999,2002,Cameroon,CMR,45,11,11.49,6.09,744,meters
+Aedes aegypti,1058,published,point,-999,1990,Cameroon,CMR,45,14,14.14,11.04,475,meters
+Aedes aegypti,527,published,point,-999,1975,Djibouti,DJI,70,43,43.15,11.59,-11,meters
+Aedes aegypti,380,published,point,-999,1973,India,IND,115,74,74.66,13.71,15,meters
+Aedes aegypti,10160,published,point,-999,,India,IND,115,77,77.75,12.94,876,meters
+Aedes aegypti,857,published,point,-999,1987,Sri Lanka,LKA,231,80,80.01,9.69,10,meters
+Aedes aegypti,4264,published,point,-999,2008,Indonesia,IDN,1013696,95,95.32,5.55,13,meters
+Aedes aegypti,3334,published,point,-999,2005,Thailand,THA,240,100,100.06,13.09,2,meters
+Aedes aegypti,2396,published,point,-999,2001,Cambodia,KHM,44,103,103.53,10.61,14,meters
+Aedes aegypti,1875,published,point,-999,1998,Viet Nam,VNM,1011447,106,106.76,10.78,2,meters
+Aedes aegypti,4332,published,point,-999,2008,Viet Nam,VNM,1011447,109,109.19,12.29,39,meters
+Aedes aegypti,284,published,point,-999,1970,Malaysia,MYS,153,117,117.48,6.65,12,meters
+Aedes aegypti,866,published,point,-999,1987,Philippines,PHL,196,120,120.99,14.63,14,meters
+Aedes aegypti,588,published,point,-999,1977,Philippines,PHL,196,123,123.71,13.06,56,meters
+Aedes aegypti,3693,published,point,-999,2006,Mexico,MEX,1006344,-107,-107.18,24.25,18,meters
+Aedes aegypti,4923,published,point,-999,2010,Mexico,MEX,1006344,-103,-103.45,19.73,1671,meters
+Aedes aegypti,10288,published,point,-999,,Mexico,MEX,1006344,-100,-100.09,17,19,meters
+Aedes aegypti,662,published,point,-999,1980,Mexico,MEX,1006344,-97,-97.85,22.3,14,meters
+Aedes aegypti,1563,published,point,-999,1996,Mexico,MEX,1006344,-94,-94.21,16.38,73,meters
+Aedes aegypti,1938,published,point,-999,1998,Mexico,MEX,1006344,-91,-91.82,18.65,0,meters
+Aedes aegypti,4938,published,point,-999,2010,Mexico,MEX,1006344,-88,-88.15,21.15,20,meters
+Aedes aegypti,773,published,point,-999,1983,Cuba,CUB,63,-83,-83.51,22.52,58,meters
+Aedes aegypti,690,published,point,-999,1981,Cuba,CUB,63,-80,-80.39,22.24,68,meters
+Aedes aegypti,1477,published,point,-999,1995,Jamaica,JAM,123,-76,-76.82,18.03,179,meters
+Aedes aegypti,924,published,point,-999,1988,Dominican Republic,DOM,72,-69,-69.89,18.51,29,meters
+Aedes aegypti,227,published,point,-999,1969,Puerto Rico,PRI,200,-65,-65.92,18.23,97,meters
+Aedes aegypti,4898,published,point,-999,2010,Saint Kitts and Nevis,KNA,208,-62,-62.69,17.29,13,meters
+Aedes aegypti,4893,published,point,-999,2010,Senegal,SEN,217,-15,-15.68,16.47,8,meters
+Aedes aegypti,4940,published,point,-999,2010,Saudi Arabia,SAU,215,39,39.98,21.34,315,meters
+Aedes aegypti,973,published,point,-999,1989,India,IND,115,71,71.68,22.7,65,meters
+Aedes aegypti,3667,published,point,-999,2006,India,IND,115,74,74.53,20.55,425,meters
+Aedes aegypti,820,published,point,-999,1986,India,IND,115,77,77.11,20.75,282,meters
+Aedes aegypti,453,published,point,-999,1973,India,IND,115,80,80.2,21.46,311,meters
+Aedes aegypti,3191,published,point,-999,2004,India,IND,115,83,83.29,17.7,34,meters
+Aedes aegypti,3681,published,point,-999,2006,India,IND,115,88,88.28,22.65,6,meters
+Aedes aegypti,322,published,point,-999,1971,Myanmar,MMR,1011440,95,95.14,22.11,75,meters
+Aedes aegypti,1060,published,point,-999,1990,Thailand,THA,240,98,98.56,16.71,208,meters
+Aedes aegypti,10258,published,point,-999,,Thailand,THA,240,101,101.11,15.66,72,meters
+Aedes aegypti,10245,published,point,-999,,Thailand,THA,240,104,104.2,15.13,133,meters
+Aedes aegypti,4049,published,point,-999,2007,Viet Nam,VNM,1011447,107,107.12,16.81,7,meters
+Aedes aegypti,659,published,point,-999,1980,China,CHN,53,110,110.41,20.05,2,meters
+Aedes aegypti,2050,published,point,-999,1999,Philippines,PHL,196,119,119.98,16.15,13,meters
+Aedes aegypti,481,published,point,-999,1974,Northern Mariana Islands,MNP,185,145,145.72,15.14,49,meters
+Aedes aegypti,10451,published,point,-999,,Mexico,MEX,1006344,-117,-117.02,32.53,59,meters
+Aedes aegypti,10446,published,point,-999,,Mexico,MEX,1006344,-112,-112.85,31.86,407,meters
+Aedes aegypti,2752,published,point,-999,2002,United States of America,USA,259,-110,-110.94,31.34,1209,meters
+Aedes aegypti,4451,published,point,-999,2008,Mexico,MEX,1006344,-108,-108.47,25.56,18,meters
+Aedes aegypti,3443,published,point,-999,2005,United States of America,USA,259,-104,-104.23,32.42,952,meters
+Aedes aegypti,1337,published,point,-999,1993,Mexico,MEX,1006344,-101,-101.52,27.88,491,meters
+Aedes aegypti,672,published,point,-999,1980,United States of America,USA,259,-99,-99.51,27.51,129,meters
+Aedes aegypti,1267,published,point,-999,1992,United States of America,USA,259,-97,-97.98,26.15,27,meters
+Aedes aegypti,2964,published,point,-999,2003,United States of America,USA,259,-95,-95.54,29.82,32,meters
+Aedes aegypti,944,published,point,-999,1988,United States of America,USA,259,-93,-93.56,32.5,82,meters
+Aedes aegypti,884,published,point,-999,1987,United States of America,USA,259,-91,-91.15,30.46,24,meters
+Aedes aegypti,249,published,point,-999,1969,United States of America,USA,259,-89,-89.02,32.32,103,meters
+Aedes aegypti,175,published,point,-999,1968,United States of America,USA,259,-87,-87.05,30.63,22,meters
+Aedes aegypti,246,published,point,-999,1969,United States of America,USA,259,-85,-85.7,31.33,103,meters
+Aedes aegypti,1340,published,point,-999,1993,United States of America,USA,259,-82,-82.64,29.45,19,meters
+Aedes aegypti,673,published,point,-999,1980,United States of America,USA,259,-80,-80.39,27.64,7,meters
+Aedes aegypti,607,published,point,-999,1978,Bahamas,BHS,20,-78,-78.82,26.55,4,meters
+Aedes aegypti,533,published,point,-999,1975,Israel,ISR,121,34,34.93,32.38,23,meters
+Aedes aegypti,3242,published,point,-999,2004,Afghanistan,AFG,1011446,69,69.17,34.53,1822,meters
+Aedes aegypti,4974,published,point,-999,2010,Pakistan,PAK,188,72,72.69,33.82,446,meters
+Aedes aegypti,4703,published,point,-999,2009,Pakistan,PAK,188,74,74.37,31.57,216,meters
+Aedes aegypti,1608,published,point,-999,1996,India,IND,115,76,76.33,29.15,224,meters
+Aedes aegypti,10402,published,point,-999,,India,IND,115,78,78,27.23,158,meters
+Aedes aegypti,102,published,point,-999,1967,India,IND,115,83,83.01,25.31,77,meters
+Aedes aegypti,1733,published,point,-999,1997,India,IND,115,89,89.98,26.02,29,meters
+Aedes aegypti,1729,published,point,-999,1997,India,IND,115,91,91.88,25.57,1645,meters
+Aedes aegypti,1732,published,point,-999,1997,India,IND,115,93,93.74,25.92,150,meters
+Aedes aegypti,1747,published,point,-999,1997,India,IND,115,95,95.57,27.02,802,meters
+Aedes aegypti,10453,published,point,-999,,Japan,JPN,126,129,129.88,32.74,89,meters
+Aedes aegypti,946,published,point,-999,1988,United States of America,USA,259,-97,-97.39,35.42,386,meters
+Aedes aegypti,783,published,point,-999,1983,United States of America,USA,259,-90,-90.04,35.14,86,meters
+Aedes aegypti,823,published,point,-999,1986,United States of America,USA,259,-87,-87.56,37.98,118,meters
+Aedes aegypti,10456,published,point,-999,,United States of America,USA,259,-85,-85.91,39.22,194,meters
+Aedes aegypti,2765,published,point,-999,2002,United States of America,USA,259,-83,-83.32,35.49,715,meters
+Aedes aegypti,793,published,point,-999,1984,United States of America,USA,259,-78,-78.65,35.79,95,meters
+Aedes aegypti,945,published,point,-999,1988,United States of America,USA,259,-77,-77.96,35.35,28,meters
+Aedes aegypti,1139,published,point,-999,1991,United States of America,USA,259,-74,-74.5,40.67,82,meters
+Aedes aegypti,374,published,point,-999,1972,United States of America,USA,259,-73,-73.89,41.18,-6,meters
+Aedes aegypti,807,published,point,-999,1985,United States of America,USA,259,-71,-71.25,41.61,13,meters
+Aedes aegypti,49,published,point,-999,1961,Turkey,TUR,249,27,27.97,38.24,141,meters
+Aedes aegypti,19929,published,point,-999,2007,Georgia,GEO,268,40,40.618588,43.10186,29,meters
+Aedes aegypti,19928,published,point,-999,2007,Georgia,GEO,268,41,41.023415,43.00154,28,meters
+Aedes aegypti,10455,published,point,-999,,"Korea, Republic of",KOR,1011443,126,126.95,37.46,194,meters
+Aedes aegypti,4102,published,point,-999,2007,Japan,JPN,126,139,139.7,35.63,34,meters
+Aedes aegypti,5095,published,point,-999,2012,Japan,JPN,126,140,140.38,35.75,39,meters
+Aedes aegypti,995,published,point,-999,1989,Canada,CAN,46,-83,-83.58,46.35,253,meters

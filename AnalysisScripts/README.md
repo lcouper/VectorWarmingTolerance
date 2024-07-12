@@ -6,4 +6,4 @@
 4. **VectorThermalSafety_TSMsByLatitude.R**   Used to model and plot patterns of thermal safety across latitude
 5. **VectorThermalSafety_TSMbiogeography.R**   Used to investigate patterns of thermal safety by biogeographical regions
 6. **VectorThermalSafety_GAMpeaks.R**   Used to identify peaks and valleys in thermal safety across latitude
-7. **VectorThermalSafety_TimeScales.R** Used to identify the time scales of thermal danger (i.e., the longest stretch of consecutive hours or days with mosquito body temperature > CTmax)
+7. **VectorThermalSafety_TimeScales.R** Used to identify the time scales of thermal danger (i.e., consecutive hours or days with mosquito body temperature > CTmax)

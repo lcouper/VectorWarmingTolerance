@@ -1,16 +1,21 @@
-#### Vector thermal safety: Occurrence points ####
+#############################################################
+########### CODE FOR VECTOR TSM OCCURRENCE POINTS ###########
+########### WRITTEN BY LISA COUPER ##########################
 
-# This script is used to plot occurrence records used in the analysis
+# This script is used to 
+# a) Plot occurrence records used in the analysis
+# b) Apply a gridded sampling approach to select occurrence records for analysis
 
 #### 0a. Load libraries ####
 
 # For GAMS
 library(mgcv)
+library(magrittr) 
 library(scales)
 library(elevatr)
 library(tidyverse)
 library(ggpmisc)
-# For plotting
+library(data.table)
 library(maps)
 library(mapdata)
 library(maptools)
@@ -21,21 +26,26 @@ library(rnaturalearthdata)
 
 #### 0b. Load colors and data frames #####
 
-setwd("~/Documents/Current Projects/WarmingTolerance/DataFiles/Vector_TSM")
+setwd("~/Documents/Current Projects/WarmingTolerance/DataFiles")
 
-# Pull in species data files with seasonality
-AeAegypti = read.csv("AeAegypti_TSM.csv")
-AeAlbopictus = read.csv("AeAlbopictus_TSM.csv")
-AeCamp = read.csv("AeCamp_TSM.csv")
-AeTri = read.csv("AeTri_TSM.csv")
-AeVexans = read.csv("AeVexans_TSM.csv")
-AnGambiae = read.csv("AnGambiae_TSM.csv")
-AnSteph = read.csv("AnSteph_TSM.csv")
-CxQuinque = read.csv("CxQuinque_TSM.csv")  
-CxPip = read.csv("CxPipiens_TSM.csv")
-CxTar = read.csv("CxTarsalis_TSM.csv")
-CxTh = read.csv("CxTheileri_TSM.csv")
-CxAnnul = read.csv("CxAnnul_TSM.csv")
+aeaegypti = fread("Vector_TSM/AeAegypti_TSM_DroughtMask_Combined_WithElevation.csv")
+aealbo = fread("Vector_TSM/AeAlbo_TSM_DroughtMask_Combined_WithElevation.csv")
+agambi = fread("Vector_TSM/AnGambiae_TSM_DroughtMask_Combined_WithElevation.csv")
+asteph = fread("Vector_TSM/AnSteph_TSM_DroughtMask_Combined_WithElevation.csv")
+cxa = fread("Vector_TSM/CxAnnul_TSM_DroughtMask_Combined_WithElevation.csv")
+cxpip = fread("Vector_TSM/CxPipiens_TSM_DroughtMask_Combined_WithElevation.csv")
+cxtar = fread("Vector_TSM/CxTarsalis_TSM_DroughtMask_Combined_WithElevation.csv")
+cxq = fread("Vector_TSM/CxQuinque_TSM_DroughtMask_Combined_WithElevation.csv")
+
+
+#aealbo = fread("Vector Occurrence Data/AeAlbopictus_SubSampledPoints.csv")
+#aeaegypti = fread("Vector Occurrence Data/AeAegypti_SubSampledPoints.csv")
+#agambi = fread("Vector Occurrence Data/AnGambi_SubSampledPoints.csv")
+#asteph = fread("Vector Occurrence Data/AnSteph_SubSampledPoints.csv")
+#cxq = fread("Vector Occurrence Data/CxQuinque_SubSampledPoints.csv")
+#cxp = fread("Vector Occurrence Data/CxPipiens_SubSampledPoints.csv")
+#cxt = fread("Vector Occurrence Data/CxTarsalis_SubSampledPoints.csv")
+#cxa = fread("Vector Occurrence Data/CxAnnul_SubSampledPoints.csv")
 
 SpeciesColors = c("#9b0000", "#ed2939",
                   "#cc5801", "#f4bb00",
@@ -50,17 +60,354 @@ SpeciesList  = c("Aedes_aegypti", "Aedes_albopictus",
                  "Aedes_triseriaatus", "Cx_tarsalis",
                  "Aedes_vexans", "Culex_theileri")
 
+################[START OF ONLY RUN THIS PART ONCE] ############ 
+##### Gridded sampling approach & obtain elevation data ######
+
+###### Aedes albopictus ######
+aedes = read.csv("Vector Occurrence Data/aegypti_albopictus.csv")
+
+# subset to just published, point records of Aedes albopicus 
+aealboOG = subset(aedes, VECTOR=="Aedes albopictus" & LOCATION_TYPE=="point" &
+                    SOURCE_TYPE=="published")
+
+# remove any duplicates (occurences from same lat, lon)
+aealbo <- aealboOG %>% dplyr::distinct(Latitude, Longitude, .keep_all = TRUE)
+
+# Ae. albopictus latitudinal range: -37 to 49
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+aealbo = subset(aealbo, Latitude>=45 & Latitude<=49)
+aealbo$LongitudeF <- as.factor(as.integer(aealbo$Longitude))
+aealbo <- aealbo %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# Identify elevation for each occurrence point
+aealbo_sites <- st_as_sf(aealbo, coords = c("Longitude", "Latitude"), 
+                         crs = 4326, agr = "constant")
+aealbo <- get_elev_point(aealbo_sites, src = "aws")
+
+# Separate out latitude and longitude
+aealbo <- aealbo %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                                   Latitude = sf::st_coordinates(.)[,2])
+
+# output this list
+#fwrite(aealbo, "Vector Occurrence Data/AeAlbopictus_SubSampledPoints.csv")
+
+###### Aedes aegypti ######
+
+# subset to just published, point records of Aedes aegypti or albopicus 
+aeaegypti = subset(aedes, VECTOR=="Aedes aegypti" & LOCATION_TYPE=="point" &
+                     SOURCE_TYPE=="published")
+
+# remove any duplicates (occurences from same lat, lon)
+aeaegypti <- aeaegypti %>% dplyr::distinct(Latitude, Longitude, .keep_all = TRUE)
+
+# Ae. aegypti total latitudinal range: -39 to 47
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+aeaegypti = subset(aeaegypti, Latitude>=45 & Latitude<=49)
+aeaegypti$LongitudeF <- as.factor(as.integer(aeaegypti$Longitude))
+aeaegypti <- aeaegypti %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(aeaegypti), by = 2)
+aeaegypti <- aeaegypti[odds,]
+
+# Identify elevation for each occurrence point
+aeaegypti_sites <- st_as_sf(aeaegypti, coords = c("Longitude", "Latitude"), 
+                            crs = 4326, agr = "constant")
+aeaegypti <- get_elev_point(aeaegypti_sites, src = "aws")
+
+# Separate out latitude and longitude
+aeaegypti <- aeaegypti %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                                         Latitude = sf::st_coordinates(.)[,2])
+
+# output this list
+#fwrite(aeaegypti, "Vector Occurrence Data/AeAegypti_SubSampledPoints.csv")
+
+
+###### Anopheles gambiae #######
+
+agambiae = read.csv("Vector Occurrence Data/Africa Vectors database_1898-2016.csv", header = T)
+agambiae = agambiae[agambiae$An.gambiae.ss == "Y",]
+
+# remove any duplicates (occurrences from same lat, lon)
+agambi <- agambiae %>% dplyr::distinct(Lat, Long, .keep_all = TRUE)
+
+agambi = agambi[!is.na(agambi$Lat),]
+agambi = agambi[!is.na(agambi$Long),]
+
+# range: -27 to 21
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+agambi = subset(agambi, Lat >=15 & Lat <= 25)
+agambi$LongitudeF <- as.factor(as.integer(agambi$Long))
+agambi <- agambi %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# Identify elevation for each occurrence point
+agambi_sites <- st_as_sf(agambi, coords = c("Long", "Lat"), 
+                         crs = 4326, agr = "constant")
+agambi <- get_elev_point(agambi_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+agambi <- agambi %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                                   Latitude = sf::st_coordinates(.)[,2])
+
+# output this list
+#fwrite(agambi, "Vector Occurrence Data/AnGambi_SubSampledPoints.csv")
+
+
+### Add-on data source of GBIF ###
+
+agambi2 = read.csv("Vector Occurrence Data/Anopheles Gambiae.csv")
+agambi2 = agambi2[!is.na(agambi2$decimalLatitude),]
+agambi2 = agambi2[!is.na(agambi2$decimalLongitude),]
+
+# remove any duplicates (occurrences from same lat, lon)
+agambi2 = agambi2  %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+
+# range: -30 to 20
+
+# Apply gridded sampling approach: 
+agambi2 = subset(agambi2, decimalLatitude >=15 & decimalLatitude <= 25)
+agambi2$LongitudeF <- as.factor(as.integer(agambi2$decimalLongitude))
+agambi2 <- agambi2 %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(agambi2), by = 2)
+agambi2 <- agambi2[odds,]
+
+
+# Identify elevation for each occurrence point
+agambi_sites <- st_as_sf(agambi2, coords = c("decimalLongitude", "decimalLatitude"), 
+                         crs = 4326, agr = "constant")
+agambi <- get_elev_point(agambi_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+agambi <- agambi %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                                   Latitude = sf::st_coordinates(.)[,2])
+
+#fwrite(agambi, "Vector Occurrence Data/AnGambi_SubSampledPoints_2.csv")
+
+# Note: manually combined output of these two data sources outside of R
+
+###### Anopheles stephensi ######
+
+asteph1 = read.csv("Vector Occurrence Data/Anopheles Stephensi.csv", header = T)
+asteph2 = read.csv("Vector Occurrence Data/AnophelesStephensi_Additional.csv", header = T)
+
+# remove any duplicates (occurrences from same lat, lon)
+asteph1 <- asteph1 %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+asteph2 <- asteph2 %>% dplyr::distinct(latitude, longitude, .keep_all = TRUE)
+
+asteph1 = asteph1[!is.na(asteph1$decimalLatitude),]
+asteph1 = asteph1[!is.na(asteph1$decimalLongitude),]
+asteph2 = asteph2[!is.na(asteph2$latitude),]
+asteph2 = asteph2[!is.na(asteph2$longitude),]
+
+# lat range: 5 to 35
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+# Doing first for additional points (i.e for locations clearly missing from GBIF data)
+asteph2 = subset(asteph2, latitude >=25 & latitude <= 35)
+asteph2$LongitudeF <- as.factor(as.integer(asteph2$longitude))
+asteph2 <- asteph2  %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# Repeat for GBIF data
+asteph1 = subset(asteph1, decimalLatitude >=25 & decimalLatitude <= 35)
+asteph1$LongitudeF <- as.factor(as.integer(asteph1$decimalLongitude))
+asteph1 <- asteph1  %>% group_by(LongitudeF) %>% slice_sample(n=3)
+
+
+# Identify elevation for each occurrence point
+asteph_sites <- st_as_sf(asteph1, coords = c("decimalLongitude", "decimalLatitude"), 
+                         crs = 4326, agr = "constant")
+asteph <- get_elev_point(asteph_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+asteph <- asteph %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                                   Latitude = sf::st_coordinates(.)[,2])
+
+# combined manually out of R
+
+# output this list
+#fwrite(asteph, "Vector Occurrence Data/AnSteph_SubSampledPoints.csv")
+
+
+###### Culex quinquefasciatus ######
+
+cxq = read.csv("Vector Occurrence Data/Culex quinquefasciatus.csv")
+cxq = cxq[!is.na(cxq$decimalLatitude),]
+cxq = cxq[!is.na(cxq$decimalLongitude),]
+
+# Latitudinal range: -44 to 47
+
+# remove any duplicates (occurrences from same lat, lon)
+cxq = cxq %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+cxq = subset(cxq, decimalLatitude >=45 & decimalLatitude <= 47)
+cxq$LongitudeF <- as.factor(as.integer(cxq$decimalLongitude))
+cxq <- cxq %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(cxq), by = 2)
+cxq <- cxq[odds,]
+
+# Identify elevation for each occurrence point
+cxq_sites <- st_as_sf(cxq, coords = c("decimalLongitude", "decimalLatitude"), 
+                      crs = 4326, agr = "constant")
+cxq <- get_elev_point(cxq_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+cxq <- cxq %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                             Latitude = sf::st_coordinates(.)[,2])
+
+# output this list
+#fwrite(cxq, "Vector Occurrence Data/CxQuinque_SubSampledPoints.csv")
+
+###### Culex pipiens ######
+
+cxp = read.csv("Vector Occurrence Data/CulexPipiens.csv")
+cxp = cxp[!is.na(cxp$decimalLatitude),]
+cxp = cxp[!is.na(cxp$decimalLongitude),]
+
+# remove any duplicates (occurrences from same lat, lon)
+cxp = cxp %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+
+# Latitudinal range: -39 to 67
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+cxp = subset(cxp, decimalLatitude >=65 & decimalLatitude <= 75)
+cxp$LongitudeF <- as.factor(as.integer(cxp$decimalLongitude))
+cxp <- cxp %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(cxp), by = 2)
+cxp <- cxp[odds,]
+
+# Identify elevation for each occurrence point
+cxp_sites <- st_as_sf(cxp, coords = c("decimalLongitude", "decimalLatitude"), 
+                      crs = 4326, agr = "constant")
+cxp <- get_elev_point(cxp_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+cxp <- cxp %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                             Latitude = sf::st_coordinates(.)[,2])
+
+
+# output this list
+#fwrite(cxp, "Vector Occurrence Data/CxPipiens_SubSampledPoints.csv")
+
+###### Culex tarsalis ######
+
+cxt = read.delim("Vector Occurrence Data/CulexTarsalis.csv")
+cxt = cxt[!is.na(cxt$decimalLatitude),]
+cxt = cxt[!is.na(cxt$decimalLongitude),]
+
+# remove any duplicates (occurrences from same lat, lon)
+cxt = cxt %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+
+# Latitudinal range: 18 to 66
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+cxt = subset(cxt, decimalLatitude >=55 & decimalLatitude <= 66)
+cxt$LongitudeF <- as.factor(as.integer(cxt$decimalLongitude))
+cxt <- cxt %>% group_by(LongitudeF) %>% slice_sample(n=1)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(cxt), by = 2)
+cxt <- cxt[odds,]
+
+# Identify elevation for each occurrence point
+cxt_sites <- st_as_sf(cxt, coords = c("decimalLongitude", "decimalLatitude"), 
+                      crs = 4326, agr = "constant")
+cxt <- get_elev_point(cxt_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+cxt <- cxt %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                             Latitude = sf::st_coordinates(.)[,2])
+
+
+# output this list
+#fwrite(cxt, "Vector Occurrence Data/CxTarsalis_SubSampledPoints.csv")
+
+
+###### Culex annulirostris ######
+
+cxa = read.csv("Vector Occurrence Data/CulexAnnulirostris.csv")
+cxa = cxa[!is.na(cxa$decimalLatitude),]
+cxa = cxa[!is.na(cxa$decimalLongitude),]
+
+# remove any duplicates (occurrences from same lat, lon)
+cxa = cxa %>% dplyr::distinct(decimalLatitude, decimalLongitude, .keep_all = TRUE)
+
+# Latitudinal range: -39 to 16
+
+# Apply a gridded sampling approach: 
+# First, subset to a single 10 degree latitudinal band
+# Then take random sample, capturing at least one from each degree longitude
+# for which there is an occurrence record
+
+cxa = subset(cxa, decimalLatitude>=5 & decimalLatitude<= 16)
+cxa$LongitudeF <- as.factor(as.integer(cxa$decimalLongitude))
+cxa <- cxa %>% group_by(LongitudeF) %>% slice_sample(n=2)
+
+# if still too many:
+odds = seq(from = 1, to = nrow(cxa), by = 2)
+cxa <- cxa[odds,]
+
+# Identify elevation for each occurrence point
+cxa_sites <- st_as_sf(cxa, coords = c("decimalLongitude", "decimalLatitude"), 
+                      crs = 4326, agr = "constant")
+cxa <- get_elev_point(cxa_sites, src = "aws", overwrite = T)
+
+# Separate out latitude and longitude
+cxa <- cxa %>% dplyr::mutate(Longitude = sf::st_coordinates(.)[,1],
+                             Latitude = sf::st_coordinates(.)[,2])
+
+
+# output this list
+#fwrite(cxa, "Vector Occurrence Data/CxAnnul_SubSampledPoints.csv")
+
+
+############ [END OF: ONLY RUN THIS PART ONCE] ##############
+
 
 #### 1. Plot Occurrence Points for each species #####
 
 ##### 1a. Aedes aegypti ######
 
-# remove any samples without elevation data
-AeAegypti = AeAegypti[!is.na(AeAegypti$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+#  Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-aeaegypti_sites <- st_as_sf(AeAegypti, coords = c("longitude", "latitude"), 
+aeaegypti_sites <- st_as_sf(aeaegypti, coords = c("lon", "lat"), 
                             crs = 4326, agr = "constant")
 ggplot(data = world) +
   geom_sf() + theme_bw() +
@@ -78,15 +425,15 @@ ggplot(data = world) +
   geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -50, lwd = 0.1, color = "black") 
-##### 1b. Aedes albopictus #####
 
-# remove any samples without elevation data
-AeAlbopictus = AeAlbopictus[!is.na(AeAlbopictus$elevation_ft),]
 
-# 1. Plot occurrence points used in analysis 
+##### 1b. Aedes albopictus ######
+
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-aealbo_sites <- st_as_sf(AeAlbopictus, coords = c("longitude", "latitude"), 
+aealbo_sites <- st_as_sf(aealbo, coords = c("lon", "lat"), 
                          crs = 4326, agr = "constant")
+
 ggplot(data = world) +
   geom_sf() + theme_bw() + labs(y = "") +
   geom_sf(data = aealbo_sites, 
@@ -104,96 +451,11 @@ ggplot(data = world) +
   geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -50, lwd = 0.1, color = "black") 
 
-##### 1c. Aedes camptorhynchus ######
-
-# remove any samples without elevation data
-AeCamp = AeCamp[!is.na(AeCamp$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
-world <- ne_countries(scale = "medium", returnclass = "sf")
-aec_sites <- st_as_sf(AeCamp, coords = c("longitude", "latitude"), 
-                      crs = 4326, agr = "constant")
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aec_sites, 
-          size = 3, shape = 16, col = "#fed439ff", alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-60, 60), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -50, lwd = 0.1, color = "black") 
-##### 1d. Aedes triseriatus #####
-
-# remove any samples without elevation data
-AeTri = AeTri[!is.na(AeTri$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
-world <- ne_countries(scale = "medium", returnclass = "sf")
-aet_sites <- st_as_sf(AeTri, coords = c("longitude", "latitude"), 
-                      crs = 4326, agr = "constant")
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aet_sites, 
-          size = 3, shape = 16, col = "#7cae00", alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-60, 60), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -50, lwd = 0.1, color = "black") 
-
-##### 1e. Aedes vexans #####
-
-# remove any samples without elevation data
-AeVexans = AeVexans[!is.na(AeVexans$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
-world <- ne_countries(scale = "medium", returnclass = "sf")
-aev_sites <- st_as_sf(AeVexans, coords = c("longitude", "latitude"), 
-                      crs = 4326, agr = "constant")
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aev_sites, 
-          size = 3, shape = 16, col = "#7cae00", alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-50, 60), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") 
-
 ##### 1f. Anopheles gambiae #####
 
-# remove any samples without elevation data
-AnGambiae = AnGambiae[!is.na(AnGambiae$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-agambi_sites <- st_as_sf(AnGambiae, coords = c("longitude", "latitude"), 
+agambi_sites <- st_as_sf(agambi, coords = c("lon", "lat"), 
                          crs = 4326, agr = "constant")
 
 ggplot(data = world) +
@@ -212,12 +474,9 @@ ggplot(data = world) +
 
 ##### 1g. Anopheles stephensi ######
 
-# remove any samples without elevation data
-AnSteph = AnSteph[!is.na(AnSteph$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-asteph_sites <- st_as_sf(AnSteph, coords = c("longitude", "latitude"), 
+asteph_sites <- st_as_sf(asteph, coords = c("lon", "lat"), 
                          crs = 4326, agr = "constant")
 
 ggplot(data = world) +
@@ -234,12 +493,9 @@ ggplot(data = world) +
 
 ##### 1h. Culex quinquefasciatus #####
 
-# remove any samples without elevation data
-CxQuinque = CxQuinque[!is.na(CxQuinque$elevation_ft),]
-
-# 1. Plot occurrence records used in analysis
+# Plot occurrence records used in analysis
 world <- ne_countries(scale = "medium", returnclass = "sf")
-cxq_sites <- st_as_sf(CxQuinque, coords = c("longitude", "latitude"), 
+cxq_sites <- st_as_sf(cxq, coords = c("lon", "lat"), 
                       crs = 4326, agr = "constant")
 
 ggplot(data = world) +
@@ -262,12 +518,9 @@ ggplot(data = world) +
 
 ##### 1i. Culex pipiens ######
 
-# remove any samples without elevation data
-CxPip = CxPip[!is.na(CxPip$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-cxp_sites <- st_as_sf(CxPip, coords = c("longitude", "latitude"), 
+cxp_sites <- st_as_sf(cxpip, coords = c("lon", "lat"), 
                       crs = 4326, agr = "constant")
 
 ggplot(data = world) +
@@ -289,14 +542,12 @@ ggplot(data = world) +
   geom_hline(yintercept = -50, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 60, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 70, lwd = 0.1, color = "black") 
+
 ##### 1j. Culex tarsalis #####
 
-# remove any samples without elevation data
-CxTar = CxTar[!is.na(CxTar$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-cxt_sites <- st_as_sf(CxTar, coords = c("longitude", "latitude"), 
+cxt_sites <- st_as_sf(cxtar, coords = c("lon", "lat"), 
                       crs = 4326, agr = "constant")
 
 ggplot(data = world) +
@@ -319,69 +570,38 @@ ggplot(data = world) +
   geom_hline(yintercept = 60, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 70, lwd = 0.1, color = "black") 
 
-##### 1k. Culex theileri #####
-
-CxTh = CxTh[!is.na(CxTh$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
-world <- ne_countries(scale = "medium", returnclass = "sf")
-cxth_sites <- st_as_sf(CxTh, coords = c("longitude", "latitude"), 
-                       crs = 4326, agr = "constant")
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = cxth_sites, 
-          size = 3, shape = 16, col = "pink", alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-60, 80), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 60, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 70, lwd = 0.1, color = "black") 
 ##### 1l. Culex annulirostris #####
 
-CxAnnul = CxAnnul[!is.na(CxAnnul$elevation_ft),]
-
-# 1. Plot occurrence points used in analysis 
+# Plot occurrence points used in analysis 
 world <- ne_countries(scale = "medium", returnclass = "sf")
-cxa_sites <- st_as_sf(CxAnnul, coords = c("longitude", "latitude"), 
+cxa_sites <- st_as_sf(cxa, coords = c("lon", "lat"), 
                       crs = 4326, agr = "constant")
 ggplot(data = world) +
   geom_sf() + theme_bw() +
   geom_sf(data = cxa_sites, 
           size = 3, shape = 16, col = "pink", alpha = 0.7) +
   labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-60, 80), expand = FALSE) +
+  coord_sf(xlim = c(80, 180), ylim = c(-50, 20), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
   geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -50, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 60, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 70, lwd = 0.1, color = "black") 
+  geom_hline(yintercept = 50, lwd = 0.1, color = "black") 
+
+
 #### 2. Plot Occurrence Points Colored by TSMs for each species #####
 ##### 2a. Aedes aegypti #####
 
 # Note: aeaegypti_sites created in 1a
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(aeaegypti_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(aeaegypti_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 AeAegyptiColors = rgb(cols, maxColorValue=256)
+world <- ne_countries(scale = "medium", returnclass = "sf")
 
 ggplot(data = world) +
   geom_sf() + theme_bw() +
@@ -397,13 +617,13 @@ ggplot(data = world) +
   geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
   geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black")
+  geom_hline(yintercept = -40, lwd = 0.1, color = "black") 
 
 ##### 2b. Aedes albopictus #####
 
 # note: aealbo_sites created in 1b
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(aealbo_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(aealbo_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 AeAlboColors = rgb(cols, maxColorValue=256)
 
@@ -422,81 +642,12 @@ ggplot(data = world) +
   geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 40, lwd = 0.1, color = "black") 
 
-##### 2c. Aedes camptorhynchus #####
-
-# note: aec_sites created in 1c.
-
-colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(aec_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
-cols <- colorscale(colorbreaks)
-AeCampColors = rgb(cols, maxColorValue=256)
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aec_sites, color = AeCampColors , 
-          size = 3, shape = 16, alpha = 0.7) +
-  #  geom_sf(data = aealbo_sites, size = 3, shape = 16, col = "darkblue", alpha = 0.7) + 
-  labs(y = "") +
-  coord_sf(xlim = c(100, 160), ylim = c(-50,-10), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black") 
-
-##### 2d. Aedes triseriatus ######
-
-# Note: aet_sites was created in 1d
-colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(aet_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
-cols <- colorscale(colorbreaks)
-AeTriColors = rgb(cols, maxColorValue=256)
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aet_sites, color = AeTriColors , 
-          size = 3, shape = 16, alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-120, -60), ylim = c(20, 50), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black")
-
-##### 2e. Aedes vexans #####
-
-# Note aev_sites created in 1e.
-colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(aev_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
-cols <- colorscale(colorbreaks)
-AeVexansColors = rgb(cols, maxColorValue=256)
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = aev_sites, color = AeVexansColors , 
-          size = 3, shape = 16, alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-180, 180), ylim = c(-30, 60), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 50, lwd = 0.1, color = "black") 
-
 ##### 2f. Anopheles gambiae #####
 
 # note: agambi_sites created in 1f.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(agambi_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(agambi_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 AnGambiColors = rgb(cols, maxColorValue=256)
 
@@ -518,7 +669,7 @@ ggplot(data = world) +
 # note: asteph_sites was created in 1g.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(asteph_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(asteph_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 AnStephColors = rgb(cols, maxColorValue=256)
 
@@ -527,7 +678,7 @@ ggplot(data = world) +
   geom_sf(data = asteph_sites, color = AnStephColors , 
           size = 3, shape = 16, alpha = 0.7) +
   labs(y = "") +
-  coord_sf(xlim = c(20, 110), ylim = c(-10, 40), expand = FALSE) +
+  coord_sf(xlim = c(30, 105), ylim = c(-10, 40), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
   geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
@@ -540,7 +691,7 @@ ggplot(data = world) +
 # Note: cxq_sites was crated in 1h.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(cxq_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(cxq_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 CxQColors = rgb(cols, maxColorValue=256)
 
@@ -569,7 +720,7 @@ ggplot(data = world) +
 # Note: cxp_sites created in 1i.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(cxp_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(cxp_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 CxPColors = rgb(cols, maxColorValue=256)
 
@@ -596,7 +747,7 @@ ggplot(data = world) +
 # Note: cxt_sites was created in 1j.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(cxt_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(cxt_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 CxTColors = rgb(cols, maxColorValue=256)
 
@@ -605,52 +756,27 @@ ggplot(data = world) +
   geom_sf(data = cxt_sites, color = CxTColors , 
           size = 3, shape = 16, alpha = 0.7) +
   labs(y = "") +
-  coord_sf(xlim = c(-130, -70), ylim = c(15, 55), expand = FALSE) +
+  coord_sf(xlim = c(-125, -75), ylim = c(15, 55), expand = FALSE) +
   geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 50, lwd = 0.1, color = "black") 
-
-##### 2k. Culex theileri #####
-
-# Note: cxth_sites created in 1k.
-
-colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(cxth_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
-cols <- colorscale(colorbreaks)
-CxThColors = rgb(cols, maxColorValue=256)
-
-ggplot(data = world) +
-  geom_sf() + theme_bw() +
-  geom_sf(data = cxth_sites, color = CxThColors , 
-          size = 3, shape = 16, alpha = 0.7) +
-  labs(y = "") +
-  coord_sf(xlim = c(-30, 100), ylim = c(-40, 50), expand = FALSE) +
-  geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
-  geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -20, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -30, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = 40, lwd = 0.1, color = "black") +
-  geom_hline(yintercept = -40, lwd = 0.1, color = "black")
 
 ##### 2l. Culex annulirostris #####
 
 # note: cxa_sites created in 1l.
 
 colorscale <- colorRamp(c("#b31818","#fdf4f4"))
-colorbreaks <- with(cxa_sites, (tolerance_point - min(tolerance_point)) / diff(range(tolerance_point)))
+colorbreaks <- with(cxa_sites, (tolerance_point2 - min(tolerance_point2)) / diff(range(tolerance_point2)))
 cols <- colorscale(colorbreaks)
 CxAnnulColors = rgb(cols, maxColorValue=256)
 
 ggplot(data = world) +
   geom_sf() + theme_bw() +
-  geom_sf(data = cxa_sites, color = CxAnnulColors , 
+  geom_sf(data = st_shift_longitude(cxa_sites), color = CxAnnulColors , 
           size = 3, shape = 16, alpha = 0.7) +
   labs(y = "") +
-  coord_sf(xlim = c(100, 180), ylim = c(-50, 20), expand = FALSE) +
+  coord_sf(xlim = c(110, 220), ylim = c(-50, 10), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
   geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
@@ -663,29 +789,18 @@ ggplot(data = world) +
 ##### Create combined occurrence plots ##### 
 ###### Combined Aedes occurrence plots #####
 
-
-Aedes = rbind.data.frame(AeAegypti, AeAlbo, AeCamp, AeTri, AeVex)
-colors = c("#f46d43", "#fdae61", "#fed439ff", "#7cae00", "#309143")
-AedesColors = rep(colors, each = 80)
-
-# 1. Plot combined occurrence records
+# Plot combined occurrence records
 world <- ne_countries(scale = "medium", returnclass = "sf")
-aeaegypti_sites <- st_as_sf(AeAegypti, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-aealbo_sites <- st_as_sf(AeAlbo, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-aec_sites <- st_as_sf(AeCamp, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-aet_sites <- st_as_sf(AeTri, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-aev_sites <- st_as_sf(AeVex, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
+aeaegypti_sites <- st_as_sf(aaegypti, coords = c("lon", "lat"), crs = 4326, agr = "constant")
+aealbo_sites <- st_as_sf(aealbo, coords = c("lon", "lat"), crs = 4326, agr = "constant")
 
 ggplot(data = world) +
   geom_sf() + theme_bw() +
-  geom_sf(data = aeaegypti_sites, size = 3, shape = 16, col = "#f46d43", alpha = 0.8) +
-  geom_sf(data = aealbo_sites, size = 3, shape = 16, col = "#fdae61", alpha = 0.8) + 
-  geom_sf(data = aec_sites, size = 3, shape = 16, col = "#fed439ff", alpha = 0.8) + 
-  geom_sf(data = aet_sites, size = 3, shape = 16, col = "#7cae00", alpha = 0.8) + 
-  geom_sf(data = aev_sites, size = 3, shape = 16, col = "#309143", alpha = 0.8) + 
+  geom_sf(data = aeaegypti_sites, size = 2, shape = 16, col = "#9b0000", alpha = 0.8) +
+  geom_sf(data = aealbo_sites, size = 2, shape = 15, col = "#ed2939", alpha = 0.8) + 
   labs(y = "") +
-  theme(axis.text.y = element_text(size = 16),axis.text.x = element_blank()) + 
-  coord_sf(xlim = c(-180, 180), ylim = c(-60, 70), expand = FALSE) +
+  theme(axis.text.y = element_text(size = 13),axis.text.x = element_blank()) + 
+  coord_sf(xlim = c(-180, 180), ylim = c(-60, 60), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
   geom_hline(yintercept = 10, lwd = 0.1, color = "black") +
@@ -700,20 +815,17 @@ ggplot(data = world) +
 
 ##### Combined Anopheles occurrence plots #####
 
-Anopheles = rbind.data.frame(AnGam, AnSteph)
-colorsAnopheles = c(rep("#ab041b", 80), rep("#ec3c30", 80))
-
-# 1. Plot combined occurrence records
+# Plot combined occurrence records
 world <- ne_countries(scale = "medium", returnclass = "sf")
-agambi_sites <- st_as_sf(AnGam, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-asteph_sites <- st_as_sf(AnSteph, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
+agambi_sites <- st_as_sf(agambi, coords = c("lon", "lat"), crs = 4326, agr = "constant")
+asteph_sites <- st_as_sf(asteph, coords = c("lon", "lat"), crs = 4326, agr = "constant")
 
 ggplot(data = world) +
   geom_sf() + theme_bw() +
-  geom_sf(data = agambi_sites,  size = 3, shape = 16, col = "#ab041b", alpha = 0.8) +
-  geom_sf(data = asteph_sites, size = 3, shape = 16, col = "#ec3c30", alpha = 0.8) + 
+  geom_sf(data = agambi_sites,  size = 3, shape = 16, col = "#cc5801", alpha = 0.8) +
+  geom_sf(data = asteph_sites, size = 3, shape = 15, col = "#f4bb00", alpha = 0.8) + 
   labs(y = "") +
-  theme(axis.text.y = element_text(size = 16),axis.text.x = element_blank()) + 
+  theme(axis.text.y = element_text(size = 13),axis.text.x = element_blank()) + 
   coord_sf(xlim = c(-180, 180), ylim = c(-40, 50), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
@@ -728,27 +840,21 @@ ggplot(data = world) +
 
 ##### Combined Culex occurrence plots ####
 
-Culex = rbind.data.frame(CxA, CxPip, CxQ, CxTar, CxTh)
-colors = c("#abd9e9", "#74add1", "#313695", "#800080", "#dda0dd")
-colorsCulex = rep(colors, each = 80)
-
-# 1. Plot combined occurrence records
+# Plot combined occurrence records
 world <- ne_countries(scale = "medium", returnclass = "sf")
-cxa_sites <- st_as_sf(CxA, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-cxp_sites <- st_as_sf(CxPip, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-cxq_sites <- st_as_sf(CxQ, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-cxt_sites <- st_as_sf(CxTar, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
-cxth_sites <- st_as_sf(CxTh, coords = c("longitude", "latitude"), crs = 4326, agr = "constant")
+cxa_sites <- st_as_sf(cxa, coords = c("lon", "lat"), crs = 4326, agr = "constant")
+cxp_sites <- st_as_sf(cxpip, coords = c("lon", "lat"), crs = 4326, agr = "constant")
+cxq_sites <- st_as_sf(cxq, coords = c("lon", "lat"), crs = 4326, agr = "constant")
+cxt_sites <- st_as_sf(cxtar, coords = c("lon", "lat"), crs = 4326, agr = "constant")
 
 ggplot(data = world) +
   geom_sf() + theme_bw() +
-  geom_sf(data = cxa_sites, size = 3, shape = 16, col = "#abd9e9", alpha = 0.8) +
-  geom_sf(data = cxp_sites, size = 3, shape = 16, col = "#74add1", alpha = 0.8) + 
-  geom_sf(data = cxq_sites, size = 3, shape = 16, col = "#313695", alpha = 0.8) + 
-  geom_sf(data = cxt_sites, size = 3, shape = 16, col = "#800080", alpha = 0.8) + 
-  geom_sf(data = cxth_sites, size = 3, shape = 16, col = "#dda0dd", alpha = 0.8) + 
+  geom_sf(data = cxa_sites, size = 3, shape = 16, col = "#74add1", alpha = 0.8) +
+  geom_sf(data = cxp_sites, size = 3, shape = 15, col = "#313695", alpha = 0.8) + 
+  geom_sf(data = cxq_sites, size = 3, shape = 17, col = "#800080", alpha = 0.8) + 
+  geom_sf(data = cxt_sites, size = 3, shape = 18, col = "#dda0dd", alpha = 0.8) + 
   labs(y = "") +
-  theme(axis.text.y = element_text(size = 16),axis.text.x = element_blank()) + 
+  theme(axis.text.y = element_text(size = 13),axis.text.x = element_blank()) + 
   coord_sf(xlim = c(-180, 180), ylim = c(-60, 70), expand = FALSE) +
   geom_hline(yintercept = -10, lwd = 0.1, color = "black") +
   geom_hline(yintercept = 0, lwd = 0.2, color = "black") + 
